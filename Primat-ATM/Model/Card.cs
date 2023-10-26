@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Primat_ATM.Model
 {
-    class Card : INotifyPropertyChanged
+    public class Card : INotifyPropertyChanged
     {
         private int cardId;
         private string cardNumber;
