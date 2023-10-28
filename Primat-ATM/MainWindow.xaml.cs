@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Primat_ATM.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace Primat_ATM
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void InsertCard(object sender, RoutedEventArgs e)
+        {
+            EnterPasswordWindow popup = new EnterPasswordWindow(CardNumber.Text);
+            popup.ShowDialog();
         }
     }
 }
