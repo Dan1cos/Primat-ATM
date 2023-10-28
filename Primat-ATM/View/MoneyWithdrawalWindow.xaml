@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Primat_ATM.View"
         mc:Ignorable="d"
-        Title="MoneyWithdrawalWindow" Height="300" Width="280">
+        Title="MoneyWithdrawalWindow"
+        Style="{StaticResource StandartWindow}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -25,16 +26,16 @@
 
         <TextBlock x:Name="HeadLine_Name" Grid.Row="1" Grid.ColumnSpan="2" Text="Choose which banknotes to withdraw money in:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <Button Grid.Row="2" Grid.Column="0" Content="100 UAH" Width="110" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Button Grid.Row="2" Grid.Column="1" Content="2000 UAH" Width="110" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="2" Grid.Column="0" Content="100 UAH" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="2000 UAH" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
 
-        <Button Grid.Row="3" Grid.Column="0" Content="200 UAH" Width="110" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Button Grid.Row="3" Grid.Column="1" Content="Other" Width="110" Click="OtherClick" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="3" Grid.Column="0" Content="200 UAH" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="3" Grid.Column="1" Content="Other" Click="OtherClick" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
 
-        <Button Grid.Row="4" Grid.Column="0" Content="500 UAH" Width="110" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="4" Grid.Column="0" Content="500 UAH" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
 
-        <Button Grid.Row="5" Grid.Column="0" Content="1000 UAH" Width="110" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Button Grid.Row="5" Grid.Column="1" Content="Go back" Width="110" Click="GoBack" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="5" Grid.Column="0" Content="1000 UAH" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="5" Grid.Column="1" Content="Go back" Click="GoBack" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
 
     </Grid>
 </Window>
