@@ -4,6 +4,52 @@
              xmlns:local="clr-namespace:Primat_ATM"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <Style x:Key="StandartButton" TargetType="Button">
+            <Setter Property="Background" Value="#FFAAA9A9"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Width" Value="124"/>
+            <Setter Property="Height" Value="33"/>
+        </Style>
+
+        <Style x:Key="StandartWindow" TargetType="Window">
+            <!--<Setter Property="WindowStyle" Value="None"/>-->
+            <Setter Property="Background" Value="#D9D9D9"/>
+            <Setter Property="Width" Value="286"/>
+            <Setter Property="Height" Value="304"/>
+        </Style>
+
+        <!--<Style x:Key="StandartTextBox" TargetType="TextBox">
+            <Setter Property="Background" Value="#FF11141A"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Foreground" Value="#FF535559"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="BorderBrush" Value="#FF2D333D"/>
+            <Setter Property="Padding" Value="10,0,0,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid x:Name="root" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" SnapsToDevicePixels="True">
+                            <Border x:Name="Background" BorderThickness="1" CornerRadius="2" Background="{TemplateBinding Background}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}"/>
+                            <ScrollViewer x:Name="Part_ContentHost" BorderThickness="0" Padding="{TemplateBinding Padding}"
+                                          IsTabStop="False" Background="{x:Null}" TextElement.Foreground="{TemplateBinding Foreground}"/>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="#FF383C44"/>
+                            </Trigger>
+                            
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="BorderBrush" Value="#FF1D578C"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
          
     </Application.Resources>
 </Application>
