@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Transactions"
         Style="{StaticResource StandartWindow}">
-    <Grid>
+    <Grid Style="{StaticResource StandartGrid}">
 
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -23,9 +23,9 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="0" Grid.ColumnSpan="2" Text="Card: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="HeadLine_Name" Grid.Row="0" Grid.ColumnSpan="2" Text="Hello, *Name*, choose an operation" Style="{StaticResource StandartHeadline}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <TextBlock x:Name="HeadLine_Name" Grid.Row="1" Grid.ColumnSpan="2" Text="Hello, *Name*, choose an operation" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource StandartCardNumber}"/>
 
         <Button Grid.Row="2" Grid.Column="0" Content="Money withdrawal" Click="MoneyWithdrawal" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
         <Button Grid.Row="2" Grid.Column="1" Content="Balance" Click="Balance" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>

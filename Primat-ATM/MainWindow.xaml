@@ -8,7 +8,7 @@
         Title="PrimATM"
         Style="{StaticResource StandartWindow}">
     
-    <Grid Margin="10">
+    <Grid Style="{StaticResource StandartGrid}">
         
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -21,14 +21,14 @@
         </Grid.ColumnDefinitions>
         
 
-        <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="You`re welcom to the PrimATM" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="You`re welcom to the PrimATM" Style="{StaticResource StandartHeadline}" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock TextWrapping="Wrap" Text="Please insert a card" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBox x:Name="CardNumber" Width="200"/>
+            <!--<TextBlock TextWrapping="Wrap" Text="Please insert a card" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Center"/>-->
+            <TextBox x:Name="CardNumber" Width="200" Tag="Please insert a card" Style="{StaticResource StandartTextBox}"/>
         </StackPanel>
 
-        <Button Grid.Row="2" Content="Insert card" Click="InsertCard" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="2" Content="Insert card" Click="InsertCard" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Margin="0,0,40,0"/>
 
     </Grid>
 </Window>

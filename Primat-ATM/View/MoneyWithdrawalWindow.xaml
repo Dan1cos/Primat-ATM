@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MoneyWithdrawalWindow"
         Style="{StaticResource StandartWindow}">
-    <Grid>
+    <Grid Style="{StaticResource StandartGrid}">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -22,9 +22,9 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="0" Grid.ColumnSpan="2" Text="Card: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="HeadLine_Name" Grid.Row="0" Grid.ColumnSpan="2" Text="Choose which banknotes to withdraw money in:" Style="{StaticResource StandartHeadline}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <TextBlock x:Name="HeadLine_Name" Grid.Row="1" Grid.ColumnSpan="2" Text="Choose which banknotes to withdraw money in:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="1" Grid.ColumnSpan="2" Text="Card: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <Button Grid.Row="2" Grid.Column="0" Content="100 UAH" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
         <Button Grid.Row="2" Grid.Column="1" Content="2000 UAH" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
