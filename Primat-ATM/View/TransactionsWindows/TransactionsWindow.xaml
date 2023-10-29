@@ -25,10 +25,20 @@
 
         <TextBlock x:Name="HeadLine_Name" Grid.Row="0" Grid.ColumnSpan="2" Text="Hello, *Name*, choose an operation" Style="{StaticResource StandartHeadline}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource StandartCardNumber}"/>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" >
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource StandartCardNumber}"/>
+            <TextBlock x:Name="HeadLine_Balance" Grid.Row="1" Text="Balance: 6000 UAH" Visibility="Hidden" Style="{StaticResource StandartCardNumber}"/>
+        </Grid>
 
         <Button Grid.Row="2" Grid.Column="0" Content="Money withdrawal" Click="MoneyWithdrawal" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
         <Button Grid.Row="2" Grid.Column="1" Content="Balance" Click="Balance" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <!--#FFA9ABB7-->
 
         <Button Grid.Row="3" Grid.Column="0" Content="Money deposit" Click="MoneyDeposit" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
         <Button Grid.Row="3" Grid.Column="1" Content="Statement" Click="Statement" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>

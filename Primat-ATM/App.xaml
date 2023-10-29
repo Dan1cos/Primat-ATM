@@ -13,6 +13,7 @@
 
         <SolidColorBrush x:Key="SecundaryBlueColor" Color="#004BFF"/>
         <SolidColorBrush x:Key="SecundaryGrayColor" Color="#9295A5"/>
+        <SolidColorBrush x:Key="SecundaryGrayColor2" Color="#FFAEAFB9"/>
 
         <SolidColorBrush x:Key="TertiaryBlueColor" Color="#496FFF"/>
         <SolidColorBrush x:Key="TertiaryGrayColor" Color="#CECECE"/>
@@ -48,6 +49,8 @@
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="TextAlignment" Value="Center"/>
             <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
 
         <Style x:Key="StandartCardNumber" TargetType="TextBlock">
@@ -104,14 +107,16 @@
             <Setter Property="FontFamily" Value="Poppins"/>
             <Setter Property="Cursor" Value="IBeam"/>
             <Setter Property="Foreground" Value="{DynamicResource PrimaryGrayColor}"/>
-            <Setter Property="Height" Value="auto"/>
-            <Setter Property="Width" Value="auto"/>
+            <Setter Property="Height" Value="36.8"/>
+            <Setter Property="Width" Value="200"/>
             <Setter Property="MaxWidth" Value="200"/>
             <Setter Property="AllowDrop" Value="True"/>
             <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
             <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
@@ -119,7 +124,8 @@
                                 MaxWidth="{TemplateBinding MaxWidth}"
                                 BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"
                                 SnapsToDevicePixels="True">
-                            <Grid Margin="{TemplateBinding Padding}">
+                            <Grid Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalAlignment}">
                                 <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden"
                                               VerticalScrollBarVisibility="Hidden" Margin="-2 2"/>
                                 <Label x:Name="WaterMarkerLabel" Content="{TemplateBinding Tag}"
