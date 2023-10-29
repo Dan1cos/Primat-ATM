@@ -4,52 +4,157 @@
              xmlns:local="clr-namespace:Primat_ATM"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style x:Key="StandartButton" TargetType="Button">
-            <Setter Property="Background" Value="#FFAAA9A9"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="BorderBrush" Value="{x:Null}"/>
-            <Setter Property="Width" Value="124"/>
-            <Setter Property="Height" Value="33"/>
-        </Style>
+        <!-- TextBox colors -->
+        <SolidColorBrush x:Key="StandatrBackgroundColor" Color="#D9D9D9"/>
+        <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#FFFFFF"/>
+
+        <SolidColorBrush x:Key="PrimaryBlueColor" Color="#263FAA"/>
+        <SolidColorBrush x:Key="PrimaryGrayColor" Color="#64677A"/>
+
+        <SolidColorBrush x:Key="SecundaryBlueColor" Color="#004BFF"/>
+        <SolidColorBrush x:Key="SecundaryGrayColor" Color="#9295A5"/>
+        <SolidColorBrush x:Key="SecundaryGrayColor2" Color="#FFAEAFB9"/>
+
+        <SolidColorBrush x:Key="TertiaryBlueColor" Color="#496FFF"/>
+        <SolidColorBrush x:Key="TertiaryGrayColor" Color="#CECECE"/>
+
+        <!-- Text colors -->
+        <SolidColorBrush x:Key="PrimaryTextColor" Color="#FFFFFF"/>
+
+        <!-- Button colors -->
+        <SolidColorBrush x:Key="StundartButtonColor" Color="#FFAAA9A9"/>
+
+        <SolidColorBrush x:Key="PrimaryBlueColor2" Color="#304FFE"/>
+
+        <SolidColorBrush x:Key="ButtonMouseOverColor" Color="#0026CA"/>
+
+        <SolidColorBrush x:Key="ButtonPressedColor" Color="#7A7CFF"/>
 
         <Style x:Key="StandartWindow" TargetType="Window">
             <!--<Setter Property="WindowStyle" Value="None"/>-->
-            <Setter Property="Background" Value="#D9D9D9"/>
-            <Setter Property="Width" Value="286"/>
-            <Setter Property="Height" Value="304"/>
+            <Setter Property="Background" Value="{DynamicResource TertiaryGrayColor}"/>
+            <Setter Property="Width" Value="350"/>
+            <Setter Property="Height" Value="400"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Poppins"/>
+            <Setter Property="Icon" Value="View/resources/atm.ico"/>
         </Style>
 
-        <!--<Style x:Key="StandartTextBox" TargetType="TextBox">
-            <Setter Property="Background" Value="#FF11141A"/>
+        <Style x:Key="StandartGrid" TargetType="Grid">
+            <Setter Property="Margin" Value="10 10 10 20"/>
+        </Style>
+
+        <Style x:Key="StandartHeadline" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="StandartCardNumber" TargetType="TextBlock">
+            <Setter Property="Text" Value="Card number: "/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="StandartButton" TargetType="Button">
+            <Setter Property="Background" Value="{DynamicResource SecundaryGrayColor}"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}"/>
+            <!--<Setter Property="Padding" Value="12 6"/>-->
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="auto"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Width" Value="130"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Height" Value="35"/>
-            <Setter Property="Foreground" Value="#FF535559"/>
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="BorderBrush" Value="#FF2D333D"/>
-            <Setter Property="Padding" Value="10,0,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="TextBox">
-                        <Grid x:Name="root" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" SnapsToDevicePixels="True">
-                            <Border x:Name="Background" BorderThickness="1" CornerRadius="2" Background="{TemplateBinding Background}" 
-                                    BorderBrush="{TemplateBinding BorderBrush}"/>
-                            <ScrollViewer x:Name="Part_ContentHost" BorderThickness="0" Padding="{TemplateBinding Padding}"
-                                          IsTabStop="False" Background="{x:Null}" TextElement.Foreground="{TemplateBinding Foreground}"/>
-                        </Grid>
-
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="btnBorder" CornerRadius="5" Background="{TemplateBinding Background}"
+                                Width="{TemplateBinding Width}" MaxHeight="{TemplateBinding MaxHeight}"
+                                BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter x:Name="ContentPresenter" Focusable="False"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              RecognizesAccessKey="True"/>
+                        </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="BorderBrush" Value="#FF383C44"/>
+                                <Setter TargetName="btnBorder" Property="Background" Value="{DynamicResource TertiaryBlueColor}"/>
                             </Trigger>
-                            
-                            <Trigger Property="IsFocused" Value="True">
-                                <Setter Property="BorderBrush" Value="#FF1D578C"/>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="btnBorder" Property="Background" Value="{DynamicResource ButtonPressedColor}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>-->
-         
+        </Style>
+
+        <Style x:Key="StandartTextBox" TargetType="TextBox">
+            <Setter Property="Background" Value="{DynamicResource PrimaryBackgroundColor}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource SecundaryGrayColor}"/>
+            <Setter Property="Padding" Value="5.2 3"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontFamily" Value="Poppins"/>
+            <Setter Property="Cursor" Value="IBeam"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryGrayColor}"/>
+            <Setter Property="Height" Value="36.8"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="MaxWidth" Value="200"/>
+            <Setter Property="AllowDrop" Value="True"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="txtBorder" Background="{TemplateBinding Background}" CornerRadius="5" 
+                                MaxWidth="{TemplateBinding MaxWidth}"
+                                BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"
+                                SnapsToDevicePixels="True">
+                            <Grid Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalAlignment}">
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden"
+                                              VerticalScrollBarVisibility="Hidden" Margin="-2 2"/>
+                                <Label x:Name="WaterMarkerLabel" Content="{TemplateBinding Tag}"
+                                       FontWeight="{TemplateBinding FontWeight}"
+                                       VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                       HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                       Visibility="Collapsed" 
+                                       Foreground="{DynamicResource SecundaryGrayColor}" 
+                                       Padding="{TemplateBinding Padding}"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="Text" Value=""/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Visibility" TargetName="WaterMarkerLabel" Value="Visible"/>
+                            </MultiTrigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="{DynamicResource TertiaryBlueColor}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="BorderBrush" Value="{DynamicResource SecundaryBlueColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Application.Resources>
 </Application>

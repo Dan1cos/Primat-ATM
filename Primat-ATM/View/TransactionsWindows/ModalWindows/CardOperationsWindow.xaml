@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="CardOperations"
         Style="{StaticResource StandartWindow}">
-    <Grid>
+    <Grid Style="{StaticResource StandartGrid}">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -22,9 +22,9 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="0" Grid.ColumnSpan="2" Text="Card: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="HeadLine_Name" Grid.Row="0" Grid.ColumnSpan="2" Text="Card operations" Style="{StaticResource StandartHeadline}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <TextBlock x:Name="HeadLine_Name" Grid.Row="1" Grid.ColumnSpan="2" Text="Card operations" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="1" Grid.ColumnSpan="2" Text="Card: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <Button Grid.Row="2" Grid.Column="0" Content="Change PIN" Click="ChangePIN" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
 

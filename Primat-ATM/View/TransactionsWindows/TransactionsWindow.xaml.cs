@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Primat_ATM.View.TransactionsWindows.ModalWindows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,10 +22,12 @@ namespace Primat_ATM.View
     {
         private string card_number;
         private string name;
+        private bool isActiveBalance;
         public TransactionsWindow(string card_number)
         {
             this.card_number = card_number;
             this.name = "Maks";
+            isActiveBalance = false;
 
             InitializeComponent();
 
@@ -40,7 +43,22 @@ namespace Primat_ATM.View
 
         private void Balance(object sender, RoutedEventArgs e)
         {
+            Button this_btn = (Button)sender;
 
+            if (isActiveBalance)
+            {
+                Grid.SetRowSpan(HeadLine_CardNumber, 2);
+                this_btn.Background = (SolidColorBrush)Application.Current.Resources["SecundaryGrayColor"];
+                HeadLine_Balance.Visibility = Visibility.Hidden;
+            } 
+            else
+            {
+                Grid.SetRowSpan(HeadLine_CardNumber, 1);
+                this_btn.Background = (SolidColorBrush)Application.Current.Resources["SecundaryGrayColor2"];
+                HeadLine_Balance.Visibility = Visibility.Visible;
+            }
+
+            isActiveBalance = !isActiveBalance;
         }
 
         private void MoneyDeposit(object sender, RoutedEventArgs e)
@@ -55,7 +73,8 @@ namespace Primat_ATM.View
 
         private void TransferMoney(object sender, RoutedEventArgs e)
         {
-
+            TransferMoneyWindow transferMoneyWindow = new TransferMoneyWindow(HeadLine_CardNumber.Text);
+            transferMoneyWindow.ShowDialog();
         }
 
         private void CardOperations(object sender, RoutedEventArgs e)
