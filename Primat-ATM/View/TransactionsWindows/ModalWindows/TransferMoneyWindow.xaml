@@ -22,11 +22,11 @@
 
         <TextBlock Grid.Row="1" x:Name="HeadLine_CardNumber" Style="{StaticResource StandartCardNumber}" HorizontalAlignment="Left" Margin="20 0 0 0"/>
 
-        <TextBox Grid.Row="2" Style="{StaticResource StandartTextBox}" Tag="Card number" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+        <TextBox Grid.Row="2" x:Name="txtBoxCardNumber" Style="{StaticResource StandartTextBox}" Tag="Card number" HorizontalAlignment="Left" Margin="20,0,0,0"/>
 
-        <TextBox Grid.Row="3" Style="{StaticResource StandartTextBox}" Tag="Amount" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+        <TextBox Grid.Row="3" x:Name="txtBoxAmount" Style="{StaticResource StandartTextBox}" Tag="Amount" HorizontalAlignment="Left" Margin="20,0,0,0"/>
 
-        <TextBox Grid.Row="4" Style="{StaticResource StandartTextBox}" Tag="Discription" HorizontalAlignment="Left" Margin="20,0,0,0" TextWrapping="Wrap" Height="auto"/>
+        <TextBox Grid.Row="4" x:Name="txtBoxDescription" Style="{StaticResource StandartTextBox}" Tag="Description" HorizontalAlignment="Left" Margin="20,0,0,0" TextWrapping="Wrap" Height="auto"/>
 
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
@@ -34,8 +34,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Content="Go back" Click="GoBack" Style="{StaticResource StandartButton}"/>
-            <Button Grid.Column="1" Content="Transfer" Style="{StaticResource StandartButton}"/>
+            <Button Grid.Column="0" Content="Cancel" Click="Cancel" Style="{StaticResource StandartButton}"/>
+            <Button Grid.Column="1" Content="Transfer" Click="Transfer" Style="{StaticResource StandartButton}"/>
         </Grid>
     </Grid>
 </Window>

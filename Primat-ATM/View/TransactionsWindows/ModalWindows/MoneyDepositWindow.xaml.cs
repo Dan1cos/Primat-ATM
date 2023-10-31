@@ -16,15 +16,15 @@ using System.Windows.Shapes;
 namespace Primat_ATM.View.TransactionsWindows.ModalWindows
 {
     /// <summary>
-    /// Логика взаимодействия для TransferMoneyWindow.xaml
+    /// Логика взаимодействия для MoneyDepositWindow.xaml
     /// </summary>
-    public partial class TransferMoneyWindow : Window
+    public partial class MoneyDepositWindow : Window
     {
-        public TransferMoneyWindow(string hedline_card)
+        public MoneyDepositWindow(string hedline_cardNumber)
         {
             InitializeComponent();
 
-            HeadLine_CardNumber.Text = hedline_card;
+            Headline_CardNumber.Text = hedline_cardNumber;
         }
 
         private void Cancel(object sender, RoutedEventArgs e)
@@ -32,16 +32,11 @@ namespace Primat_ATM.View.TransactionsWindows.ModalWindows
             this.Close();
         }
 
-        private void Transfer(object sender, RoutedEventArgs e)
+        private void Deposit(object sender, RoutedEventArgs e)
         {
             ConfirmationDialog confirmationDialog = new ConfirmationDialog();
-            confirmationDialog.Height = confirmationDialog.Height + 20;
-            confirmationDialog.SomeTxt.TextAlignment = TextAlignment.Left;
 
-            confirmationDialog.ConfirmationDilog("Recipient's card: " + txtBoxCardNumber.Text + '\n' +
-                "Amount: " + txtBoxAmount.Text + '\n' +
-                "Transfer money?");
-
+            confirmationDialog.ConfirmationDilog("Deposit " + txtBoxAmount.Text + " UAH to your account?");
             bool yes = confirmationDialog.ShowCustomDilog();
 
             if (!yes)
@@ -52,8 +47,7 @@ namespace Primat_ATM.View.TransactionsWindows.ModalWindows
 
             // if the operation is successful
             confirmationDialog = new ConfirmationDialog();
-            confirmationDialog.SuccessfulDialog("You have successfully transferred " + txtBoxAmount.Text + 
-                "\nUAH to the card " + txtBoxCardNumber.Text + '.');
+            confirmationDialog.SuccessfulDialog("You have successfully deposited " + txtBoxAmount.Text + " UAH to your account.");
             confirmationDialog.ShowDialog();
         }
     }

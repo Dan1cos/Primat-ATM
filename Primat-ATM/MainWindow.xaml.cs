@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Primat_ATM.View.ConfirmationWindows;
 
 namespace Primat_ATM
 {
@@ -28,10 +29,25 @@ namespace Primat_ATM
             InitializeComponent();
         }
 
-        private void InsertCard(object sender, RoutedEventArgs e)
+        private void Send(object sender, RoutedEventArgs e)
         {
-            EnterPasswordWindow popup = new EnterPasswordWindow(CardNumber.Text);
-            popup.ShowDialog();
+            string card_number = txtBoxCardNumber.Text;
+            EnterPasswordWindow popup = new EnterPasswordWindow(card_number);
+            bool isCorrectPassword = popup.ShowCustomDialog();
+
+            if (isCorrectPassword)
+            {
+                TransactionsWindow transactions = new TransactionsWindow(card_number);
+                this.Close();
+
+                transactions.Show();
+            } 
+            else
+            {
+                ConfirmationDialog errorDialog = new ConfirmationDialog();
+                errorDialog.ErrorDialog("Wrong password!");
+                errorDialog.ShowDialog();
+            }
         }
     }
 }
