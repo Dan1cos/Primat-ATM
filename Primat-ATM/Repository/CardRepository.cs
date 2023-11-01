@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+﻿using MySqlConnector;
 using Primat_ATM.Model;
 using System;
 using System.Collections.Generic;
