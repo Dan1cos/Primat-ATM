@@ -20,11 +20,12 @@ namespace Primat_ATM.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "insert into card(cardNumber, balance, email, pin) values (@cardNumber, @balance, @email, @pin)";
+                command.CommandText = "insert into card(cardNumber, balance, email, pin, sendNotification) values (@cardNumber, @balance, @email, @pin, @sendNotification)";
                 command.Parameters.Add("@cardNumber", MySqlDbType.VarChar).Value = card.CardNumber;
                 command.Parameters.Add("@balance", MySqlDbType.Float).Value = card.Balance;
                 command.Parameters.Add("@email", MySqlDbType.VarChar).Value = card.Email;
                 command.Parameters.Add("@pin", MySqlDbType.Int32).Value = card.Pin;
+                command.Parameters.Add("@sendNotification", MySqlDbType.Bit).Value = card.SendNotification;
                 command.ExecuteNonQuery();
             }
         }
@@ -52,11 +53,12 @@ namespace Primat_ATM.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "update card set cardNumber=@cardNumber, balance=@balance, email=@email, pin=@pin where cardId=@cardId";
+                command.CommandText = "update card set cardNumber=@cardNumber, balance=@balance, email=@email, pin=@pin, sendNotification=@sendNotification where cardId=@cardId";
                 command.Parameters.Add("@cardNumber", MySqlDbType.VarChar).Value = card.CardNumber;
                 command.Parameters.Add("@balance", MySqlDbType.Float).Value = card.Balance;
                 command.Parameters.Add("@email", MySqlDbType.VarChar).Value = card.Email;
                 command.Parameters.Add("@pin", MySqlDbType.Int32).Value = card.Pin;
+                command.Parameters.Add("@sendNotification", MySqlDbType.Bit).Value = card.SendNotification;
                 command.Parameters.Add("@cardId", MySqlDbType.Int32).Value = card.CardId;
                 command.ExecuteNonQuery();
             }
@@ -78,6 +80,7 @@ namespace Primat_ATM.Repository
                     {
                         int ordId = reader.GetOrdinal("cardId");
                         int ordBalance = reader.GetOrdinal("balance");
+                        int ordNotification = reader.GetOrdinal("sendNotification");
 
                         card = new Card
                         {
@@ -86,6 +89,7 @@ namespace Primat_ATM.Repository
                             Balance = reader.GetFloat(ordBalance),
                             Email = reader[3].ToString(),
                             Pin = reader[4].ToString(),
+                            SendNotification = reader.GetBoolean(ordNotification),
                         };
                     }
                     
@@ -110,6 +114,7 @@ namespace Primat_ATM.Repository
                     {
                         int ordId = reader.GetOrdinal("cardId");
                         int ordBalance = reader.GetOrdinal("balance");
+                        int ordNotification = reader.GetOrdinal("sendNotification");
 
                         card = new Card
                         {
@@ -118,6 +123,7 @@ namespace Primat_ATM.Repository
                             Balance = reader.GetFloat(ordBalance),
                             Email = reader[3].ToString(),
                             Pin = reader[4].ToString(),
+                            SendNotification = reader.GetBoolean(ordNotification),
                         };
                     }
 
