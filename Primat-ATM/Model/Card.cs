@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace Primat_ATM.Model
 {
-    class Card : INotifyPropertyChanged
+    public class Card : INotifyPropertyChanged
     {
         private int cardId;
         private string cardNumber;
         private float balance;
         private string email;
         private string pin;
+        private bool sendNotification;
         public int CardId
         {
             get
@@ -76,6 +77,19 @@ namespace Primat_ATM.Model
             {
                 pin = value;
                 OnPropertyChanged("Pin");
+            }
+        }
+
+        public bool SendNotification
+        {
+            get
+            {
+                return sendNotification;
+            }
+            set
+            {
+                sendNotification = value;
+                OnPropertyChanged("SendNotification");
             }
         }
 

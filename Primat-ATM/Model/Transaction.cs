@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Primat_ATM.Model
 {
-    class Transaction : INotifyPropertyChanged
+    public class Transaction : INotifyPropertyChanged
     {
         private int transactionId;
         private DateTime timestamp;
