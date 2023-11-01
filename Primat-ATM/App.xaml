@@ -38,6 +38,7 @@
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="FontFamily" Value="Poppins"/>
             <Setter Property="Icon" Value="View/resources/atm.ico"/>
+            <Setter Property="ResizeMode" Value="NoResize"/>
         </Style>
 
         <Style x:Key="StandartGrid" TargetType="Grid">

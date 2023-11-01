@@ -20,26 +20,26 @@ namespace Primat_ATM.View
     public partial class EnterPasswordWindow : Window
     {
         private string card_number;
+        private bool isCorrectPassword;
         public EnterPasswordWindow(string card_number)
         {
             this.card_number = card_number;
+            isCorrectPassword = false;
+
             InitializeComponent();
         }
 
         private void CheckTheLogin(object sender, RoutedEventArgs e)
         {
-            CardPassword.Text = card_number + " " + CardPassword.Text;
+            isCorrectPassword = true;
+            this.Close();
+        }
 
-            TransactionsWindow transactions = new TransactionsWindow(card_number);
+        public bool ShowCustomDialog()
+        {
+            ShowDialog();
 
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window != transactions) {
-                    window.Close();
-                }
-            }
-
-            transactions.Show();
+            return isCorrectPassword;
         }
     }
 }

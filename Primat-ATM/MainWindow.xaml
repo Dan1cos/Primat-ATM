@@ -25,10 +25,10 @@
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <!--<TextBlock TextWrapping="Wrap" Text="Please insert a card" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Center"/>-->
-            <TextBox x:Name="CardNumber" Width="200" Tag="Please insert a card" Style="{StaticResource StandartTextBox}"/>
+            <TextBox x:Name="txtBoxCardNumber" Width="200" Tag="Please insert a card" Style="{StaticResource StandartTextBox}"/>
         </StackPanel>
 
-        <Button Grid.Row="2" Content="Insert card" Click="InsertCard" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Margin="0,0,40,0"/>
+        <Button Grid.Row="2" Content="Send" Click="Send" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Margin="0,0,40,0"/>
 
     </Grid>
 </Window>

@@ -63,7 +63,8 @@ namespace Primat_ATM.View
 
         private void MoneyDeposit(object sender, RoutedEventArgs e)
         {
-
+            MoneyDepositWindow moneyDepositWindow = new MoneyDepositWindow(HeadLine_CardNumber.Text);
+            moneyDepositWindow.ShowDialog();
         }
 
         private void Statement(object sender, RoutedEventArgs e)
