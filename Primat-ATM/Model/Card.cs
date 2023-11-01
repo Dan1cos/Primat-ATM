@@ -14,7 +14,6 @@ namespace Primat_ATM.Model
         private float balance;
         private string email;
         private string pin;
-        private bool sendNotification;
         public int CardId
         {
             get
@@ -77,19 +76,6 @@ namespace Primat_ATM.Model
             {
                 pin = value;
                 OnPropertyChanged("Pin");
-            }
-        }
-
-        public bool SendNotification
-        {
-            get
-            {
-                return sendNotification;
-            }
-            set
-            {
-                sendNotification = value;
-                OnPropertyChanged("SendNotification");
             }
         }
 
