@@ -32,8 +32,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Content="Cancel" Click="Cancel" Style="{StaticResource StandartButton}"/>
-            <Button Grid.Column="1" Content="Deposit" Click="Deposit" Style="{StaticResource StandartButton}"/>
+            <Button Content="Cancel" Style="{StaticResource StandartButton}"/>
+            <Button Grid.Column="1" Content="Deposit" Style="{StaticResource StandartButton}"/>
         </Grid>
     </Grid>
 </Window>
