@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="PrimATM"
         Style="{StaticResource StandartWindow}">
+
     
     <Grid Style="{StaticResource StandartGrid}">
         
@@ -21,14 +22,16 @@
         </Grid.ColumnDefinitions>
         
 
-        <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="You`re welcom to the PrimATM" Style="{StaticResource StandartHeadline}" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="You`re welcome to the PrimATM" Style="{StaticResource StandartHeadline}" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <!--<TextBlock TextWrapping="Wrap" Text="Please insert a card" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Center"/>-->
-            <TextBox x:Name="txtBoxCardNumber" Width="200" Tag="Please insert a card" Style="{StaticResource StandartTextBox}"/>
+            <TextBox x:Name="txtBoxCardNumber" Width="200" Tag="Please insert a card" Style="{StaticResource StandartTextBox}" Text="{Binding CardNumber, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="txtBoxCardPin" Margin="10px" Width="200" Tag="Please enter a pin" Style="{StaticResource StandartTextBox}" Text="{Binding Pin, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock x:Name="txtBlockError" Width="200" Foreground="Red" Text="{Binding ErrorMessage, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
-        <Button Grid.Row="2" Content="Send" Click="Send" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Margin="0,0,40,0"/>
+        <Button Grid.Row="2" Content="Send" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Margin="0,0,40,0" Command="{Binding LoginCommand}"/>
 
     </Grid>
 </Window>

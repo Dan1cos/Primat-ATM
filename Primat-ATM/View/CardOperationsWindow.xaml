@@ -26,11 +26,11 @@
 
         <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="1" Grid.ColumnSpan="2" Text="Card: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <Button Grid.Row="2" Grid.Column="0" Content="Change PIN" Click="ChangePIN" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="2" Grid.Column="0" Content="Change PIN" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
 
-        <Button Grid.Row="3" Grid.Column="0" Content="Change email" Click="ChangeEmail" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="3" Grid.Column="0" Content="Change email" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
 
-        <Button Grid.Row="5" Grid.Column="0" Content="Go back" Click="GoBack" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="5" Grid.Column="0" Content="Go back" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
 
     </Grid>
 </Window>

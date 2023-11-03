@@ -21,15 +21,15 @@ namespace Primat_ATM.View
     {
         private string card_number;
         private bool isCorrectPassword;
-        public EnterPasswordWindow(string card_number)
+        public EnterPasswordWindow()
         {
-            this.card_number = card_number;
-            isCorrectPassword = false;
+/*            this.card_number = card_number;
+            isCorrectPassword = false;*/
 
             InitializeComponent();
         }
 
-        private void CheckTheLogin(object sender, RoutedEventArgs e)
+/*        private void CheckTheLogin(object sender, RoutedEventArgs e)
         {
             isCorrectPassword = true;
             this.Close();
@@ -40,6 +40,6 @@ namespace Primat_ATM.View
             ShowDialog();
 
             return isCorrectPassword;
-        }
+        }*/
     }
 }
