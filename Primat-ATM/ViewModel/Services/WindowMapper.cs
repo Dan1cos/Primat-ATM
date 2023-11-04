@@ -19,6 +19,8 @@ namespace Primat_ATM.ViewModel.Services
             RegisterMapping<MainViewModel, TransactionsWindow>();
             RegisterMapping<SettingsViewModel, CardOperationsWindow>();
             RegisterMapping<DepositViewModel, MoneyDepositWindow>();
+            RegisterMapping<TransferViewModel, TransferMoneyWindow>();
+            RegisterMapping<WithdrawalViewModel, MoneyWithdrawalWindow>();
         }
 
         public void RegisterMapping<TViewModel, TWindow>() where TViewModel: ViewModelBase where TWindow: Window

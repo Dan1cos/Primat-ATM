@@ -1,4 +1,6 @@
-﻿using Primat_ATM.View.ConfirmationWindows;
+﻿using Primat_ATM.Model;
+using Primat_ATM.View.ConfirmationWindows;
+using Primat_ATM.ViewModel.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +25,10 @@ namespace Primat_ATM.View.TransactionsWindows.ModalWindows
         public MoneyDepositWindow()
         {
             InitializeComponent();
+        }
+        private void Cancel(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
     }

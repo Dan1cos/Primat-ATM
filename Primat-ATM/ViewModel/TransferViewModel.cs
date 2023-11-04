@@ -8,14 +8,14 @@ using Primat_ATM.ViewModel.Services;
 
 namespace Primat_ATM.ViewModel
 {
-    public class DepositViewModel: ViewModelBase
+    public class TransferViewModel: ViewModelBase
     {
-        ICardService cardRepository;
+        ICardService cardService;
+        ICardRepository cardRepository;
         ITransactionRepository transactionRepository;
         IWindowManager windowManager;
-        public DepositViewModel()
-        {
-
+        public TransferViewModel() {
+            
         }
     }
 }

@@ -17,6 +17,10 @@ namespace Primat_ATM.ViewModel
         public ICardService CardService { get; set; }
         public RelayCommand OpenSettingsWindowCommand { get; set; }
         public RelayCommand NavigateDepositCommand { get; set; }
+        public RelayCommand NavigateTransferCommand { get; set; }
+        public RelayCommand NavigateWithdrawalCommand { get; set; }
+        public RelayCommand RelayNavigateCancelCommand { get; set; }
+
         public MainViewModel(INavigationService navigationService ,ICardService cardService, IWindowManager windowManager, ViewModelLocator viewModelLocator)
         {
             NavigationService = navigationService;
@@ -26,7 +30,14 @@ namespace Primat_ATM.ViewModel
             card = cardService.Card;
 
             OpenSettingsWindowCommand = new RelayCommand(o => { _windowManager.ShowWindow(_viewModelLocator.SettingsViewModel); }, o => true);
-            NavigateDepositCommand = new RelayCommand(o => { NavigationService.NavigateTo<DepositViewModel>(); }, o => true);
+            //NavigateDepositCommand = new RelayCommand(o => { NavigationService.NavigateTo<DepositViewModel>(); }, o => true);
+            NavigateDepositCommand = new RelayCommand(o => { _windowManager.ShowWindow(_viewModelLocator.DepositViewModel); }, o => true);
+
+            //NavigateTransferCommand = new RelayCommand(o => { NavigationService.NavigateTo<TransferViewModel>(); }, o => true);
+            NavigateTransferCommand = new RelayCommand(o => { _windowManager.ShowWindow(_viewModelLocator.TransferViewModel); }, o => true);
+
+            //NavigateWithdrawalCommand = new RelayCommand(o => { NavigationService.NavigateTo<WithdrawalViewModel>(); }, o => true);
+            NavigateWithdrawalCommand = new RelayCommand(o => { _windowManager.ShowWindow(_viewModelLocator.WithdrawalViewModel); }, o => true);
 
         }
 

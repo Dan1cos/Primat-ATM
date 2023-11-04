@@ -24,5 +24,9 @@ namespace Primat_ATM.View
         {
             InitializeComponent();
         }
+        private void Cancel(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

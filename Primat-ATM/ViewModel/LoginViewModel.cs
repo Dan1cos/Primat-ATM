@@ -1,6 +1,7 @@
 ﻿using Primat_ATM.Model;
 using Primat_ATM.Repository;
 using Primat_ATM.ViewModel.Services;
+using Primat_ATM.View.ConfirmationWindows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,6 +67,7 @@ namespace Primat_ATM.ViewModel
                 if (isValidCard)
                 {
                     CardService.Authenticate(cardRepository.GetByCardNumber(CardNumber));
+                    ErrorMessage = "";
                     _windowManager.ShowWindow(_viewModelLocator.MainViewModel);
                 }
                 else

@@ -19,27 +19,10 @@ namespace Primat_ATM.View
     /// </summary>
     public partial class EnterPasswordWindow : Window
     {
-        private string card_number;
-        private bool isCorrectPassword;
         public EnterPasswordWindow()
         {
-/*            this.card_number = card_number;
-            isCorrectPassword = false;*/
 
             InitializeComponent();
         }
-
-/*        private void CheckTheLogin(object sender, RoutedEventArgs e)
-        {
-            isCorrectPassword = true;
-            this.Close();
-        }
-
-        public bool ShowCustomDialog()
-        {
-            ShowDialog();
-
-            return isCorrectPassword;
-        }*/
     }
 }

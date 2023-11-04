@@ -19,5 +19,7 @@ namespace Primat_ATM.ViewModel.Services
         public LoginViewModel LoginViewModel => _provider.GetRequiredService<LoginViewModel>();
         public SettingsViewModel SettingsViewModel => _provider.GetRequiredService<SettingsViewModel>();
         public DepositViewModel DepositViewModel => _provider.GetRequiredService<DepositViewModel>();
+        public TransferViewModel TransferViewModel => _provider.GetRequiredService<TransferViewModel>();
+        public WithdrawalViewModel WithdrawalViewModel => _provider.GetRequiredService<WithdrawalViewModel>();
     }
 }
