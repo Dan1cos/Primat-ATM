@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Primat_ATM.View.ConfirmationWindows
+namespace Primat_ATM.View
 {
     /// <summary>
     /// Логика взаимодействия для ConfirmationDialog.xaml

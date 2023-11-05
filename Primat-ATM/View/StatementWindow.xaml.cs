@@ -1,0 +1,30 @@
+﻿using Primat_ATM.View;
+using Primat_ATM.ViewModel;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Transactions;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace Primat_ATM.View
+{
+    /// <summary>
+    /// Логика взаимодействия для StatementWindow.xaml
+    /// </summary>
+    public partial class StatementWindow : UserControl
+    {
+        public StatementWindow()
+        {
+            InitializeComponent();
+        }
+    }
+}

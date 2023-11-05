@@ -29,6 +29,19 @@
         <SolidColorBrush x:Key="ButtonMouseOverColor" Color="#0026CA"/>
 
         <SolidColorBrush x:Key="ButtonPressedColor" Color="#7A7CFF"/>
+        
+        <!-- ToggleButton -->
+        <SolidColorBrush x:Key="PrimaryBackgroundToggleButtonColor" Color="#4D94D0"/>
+        <SolidColorBrush x:Key="SecondaryBackgroundToggleButtonColor" Color="#FFFFFF"/>
+
+        <SolidColorBrush x:Key="PrimaryBlueToggleButtonColor" Color="#263FAA"/>
+        <SolidColorBrush x:Key="PrimaryGrayToggleButtonColor" Color="#64677A"/>
+
+        <SolidColorBrush x:Key="SecondaryBlueToggleButtonColor" Color="#3B76BB"/>
+        <SolidColorBrush x:Key="SecondaryGrayToggleButtonColor" Color="#CECECE"/>
+
+        <SolidColorBrush x:Key="TertiaryBlueToggleButtonColor" Color="#C2D1FC"/>
+
 
         <Style x:Key="StandartWindow" TargetType="Window">
             <!--<Setter Property="WindowStyle" Value="None"/>-->
@@ -38,6 +51,7 @@
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="FontFamily" Value="Poppins"/>
             <Setter Property="Icon" Value="View/resources/atm.ico"/>
+            <Setter Property="ResizeMode" Value="NoResize"/>
             <Setter Property="ResizeMode" Value="NoResize"/>
         </Style>
 
@@ -59,6 +73,116 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
+
+        <Style x:Key="StandartComboBox" TargetType="ComboBox">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Poppins"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="SelectedIndex" Value="0"/>
+            <!--<Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <ToggleButton x:Name="ToggleButton"
+                                          Template="{StaticResource ComboBoxToggleButton}"
+                                          Grid.Column="2"
+                                          Focusable="False"
+                                          ClickMode="Press"
+                                          IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplateParent}}"/>
+
+                            <ContentPresenter/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>-->
+        </Style>
+
+        <!-- Start: ToggleButtonStyle -->
+        <Style x:Key="ToggleButtonStyle" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Background" Value="{DynamicResource SecundaryGrayColor}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryGrayToggleButtonColor}"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="35"/>
+            <Setter Property="MaxHeight" Value="20"/>
+            <Setter Property="MaxWidth" Value="35"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Grid>
+                            <Border x:Name="Border"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="7"
+                                Height="14"
+                                Width="{TemplateBinding Width}"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0.5" Opacity=".3"/>
+                                </Border.Effect>
+                            </Border>
+                            <Ellipse x:Name="Ellipse"
+                                     Height="20"
+                                     Width="20"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Left"
+                                     Fill="{DynamicResource SecondaryBackgroundToggleButtonColor}"
+                                     Stroke="{TemplateBinding BorderBrush}"
+                                     StrokeThickness="3">
+
+                                <Ellipse.Effect>
+                                    <DropShadowEffect ShadowDepth="0.5" Opacity=".3"/>
+                                </Ellipse.Effect>
+                            </Ellipse>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <!--<EventTrigger RoutedEvent="Checked">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="Border"
+                                                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                        To="#496FFF" Duration="0:0:0.2"/>
+                                        <ThicknessAnimation Storyboard.TargetName="Ellipse"
+                                                            Storyboard.TargetProperty="Margin"
+                                                            To="15 0 0 0" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            
+                            <EventTrigger RoutedEvent="Unchecked">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="Border"
+                                                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                        To="#9295A5" Duration="0:0:0.2"/>
+                                        <ThicknessAnimation Storyboard.TargetName="Ellipse"
+                                                            Storyboard.TargetProperty="Margin"
+                                                            To="0 0 0 0" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>-->
+
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="Ellipse" Property="HorizontalAlignment" Value="Right"/>
+                                <Setter TargetName="Border" Property="Background" Value="{DynamicResource TertiaryBlueColor}"/>
+                                <Setter TargetName="Ellipse" Property="Fill" Value="{DynamicResource PrimaryBackgroundColor}"/>
+                                <Setter TargetName="Ellipse" Property="Stroke" Value="{DynamicResource PrimaryGrayColor}"/>
+                            </Trigger>
+
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter TargetName="Ellipse" Property="Fill" Value="{DynamicResource PrimaryBackgroundColor}"/>
+                                <Setter TargetName="Ellipse" Property="Stroke" Value="{DynamicResource PrimaryGrayColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!-- End: ToggleButtonStyle -->
 
         <Style x:Key="StandartButton" TargetType="Button">
             <Setter Property="Background" Value="{DynamicResource SecundaryGrayColor}"/>

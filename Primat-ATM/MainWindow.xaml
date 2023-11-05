@@ -9,17 +9,13 @@
         Style="{StaticResource StandartWindow}">
     
     <Grid Style="{StaticResource StandartGrid}">
-        
+
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        
 
         <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="You`re welcom to the PrimATM" Style="{StaticResource StandartHeadline}" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
@@ -28,7 +24,14 @@
             <TextBox x:Name="txtBoxCardNumber" Width="200" Tag="Please insert a card" Style="{StaticResource StandartTextBox}"/>
         </StackPanel>
 
-        <Button Grid.Row="2" Content="Send" Click="Send" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Margin="0,0,40,0"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
+            <Button Grid.Column="0" Content="Create card" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Button Grid.Column="1" Content="Send" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+        </Grid>
     </Grid>
 </Window>

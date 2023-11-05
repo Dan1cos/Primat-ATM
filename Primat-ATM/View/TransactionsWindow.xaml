@@ -36,17 +36,17 @@
             <TextBlock x:Name="HeadLine_Balance" Grid.Row="1" Text="Balance: 6000 UAH" Visibility="Hidden" Style="{StaticResource StandartCardNumber}"/>
         </Grid>
 
-        <Button Grid.Row="2" Grid.Column="0" Content="Money withdrawal" Click="MoneyWithdrawal" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Button Grid.Row="2" Grid.Column="1" Content="Balance" Click="Balance" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="2" Grid.Column="0" Content="Money withdrawal" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="Balance" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
         <!--#FFA9ABB7-->
 
-        <Button Grid.Row="3" Grid.Column="0" Content="Money deposit" Click="MoneyDeposit" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Button Grid.Row="3" Grid.Column="1" Content="Statement" Click="Statement" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="3" Grid.Column="0" Content="Money deposit" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="3" Grid.Column="1" Content="Statement" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
 
-        <Button Grid.Row="4" Grid.Column="0" Content="Transfer money" Click="TransferMoney" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="4" Grid.Column="0" Content="Transfer money" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
 
-        <Button Grid.Row="5" Grid.Column="0" Content="Card operations" Click="CardOperations" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Button Grid.Row="5" Grid.Column="1" Content="End session" Click="EndSession" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="5" Grid.Column="0" Content="Card operations" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="5" Grid.Column="1" Content="End session" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
 
     </Grid>
 </Window>

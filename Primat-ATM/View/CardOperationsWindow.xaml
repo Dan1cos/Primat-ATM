@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Primat_ATM.View.CardOperationsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Primat_ATM.View"
+        mc:Ignorable="d">
+    <Grid Style="{StaticResource StandartGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="HeadLine_Name" Grid.Row="0" Grid.ColumnSpan="2" Text="Card operations" Style="{StaticResource StandartHeadline}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="1" Grid.ColumnSpan="2" Text="Card: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Button Grid.Row="2" Grid.Column="0" Content="Change PIN" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        <Button Grid.Row="3" Grid.Column="0" Content="Change email" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+            
+                <CheckBox x:Name="IsSendEmail" Grid.Row="4" Grid.Column="0" Style="{DynamicResource ToggleButtonStyle}" Margin="0,0,10,0"/>
+                <TextBlock Grid.Row="4" Grid.Column="1" Text="Send a message to the Email" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+        </StackPanel>
+
+        <Button Grid.Row="5" Grid.Column="0" Content="Go back" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+
+    </Grid>
+</UserControl>

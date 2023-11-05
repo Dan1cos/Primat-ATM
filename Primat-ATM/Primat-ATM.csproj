@@ -8,6 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="View\AuthorizationWindows\**" />
+    <Compile Remove="View\ConfirmationWindows\**" />
+    <Compile Remove="View\TransactionsWindows\**" />
+    <EmbeddedResource Remove="View\AuthorizationWindows\**" />
+    <EmbeddedResource Remove="View\ConfirmationWindows\**" />
+    <EmbeddedResource Remove="View\TransactionsWindows\**" />
+    <None Remove="View\AuthorizationWindows\**" />
+    <None Remove="View\ConfirmationWindows\**" />
+    <None Remove="View\TransactionsWindows\**" />
+    <Page Remove="View\AuthorizationWindows\**" />
+    <Page Remove="View\ConfirmationWindows\**" />
+    <Page Remove="View\TransactionsWindows\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="View\resources\atm.ico" />
   </ItemGroup>
 
