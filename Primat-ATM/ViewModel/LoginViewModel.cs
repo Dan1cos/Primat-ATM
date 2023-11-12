@@ -1,7 +1,6 @@
 ﻿using Primat_ATM.Model;
 using Primat_ATM.Repository;
 using Primat_ATM.ViewModel.Services;
-using Primat_ATM.View.ConfirmationWindows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -83,7 +82,6 @@ namespace Primat_ATM.ViewModel
                     ErrorMessage = "";
                     _windowManager.ShowWindow(_viewModelLocator.MainViewModel);
                     NavigationService.NavigateTo<TransactionsViewModel>();
-                    ErrorMessage = "";
                 }
                 else
                 {
