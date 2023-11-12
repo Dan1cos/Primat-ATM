@@ -15,7 +15,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Primat_ATM.View.ConfirmationWindows;
 using Primat_ATM.ViewModel.Services;
 
 namespace Primat_ATM

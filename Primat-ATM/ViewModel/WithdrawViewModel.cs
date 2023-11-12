@@ -4,19 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Primat_ATM.Model;
-using Primat_ATM.ViewModel.Services;
 
 namespace Primat_ATM.ViewModel
 {
-    public class TransferViewModel: ViewModelBase
+    public class WithdrawViewModel: ViewModelBase
     {
         private INavigationService _navigationService;
+
+        public RelayCommand NavigateOtherWithdrawWindowCommand { get; set; }
         public RelayCommand NavigateCancelCommand { get; set; }
-        public TransferViewModel(INavigationService navigationService)
+        public WithdrawViewModel(INavigationService navigationService)
         {
             NavigationService = navigationService;
 
+            NavigateOtherWithdrawWindowCommand = new RelayCommand(o => { NavigationService.NavigateTo<OtherWithdrawViewModel>(); }, o => true);
             NavigateCancelCommand = new RelayCommand(o => { NavigationService.NavigateTo<TransactionsViewModel>(); }, o => true);
         }
 

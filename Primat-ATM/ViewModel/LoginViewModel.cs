@@ -22,18 +22,31 @@ namespace Primat_ATM.ViewModel
         private string errorMessage;
         private IWindowManager _windowManager;
         private ViewModelLocator _viewModelLocator;
+        private INavigationService _navigationService;
         public ICardService CardService { get; set; }
-        public LoginViewModel(ICardService cardService, IWindowManager windowManager, ViewModelLocator viewModelLocator)
+        public LoginViewModel(INavigationService navigationService, ICardService cardService, IWindowManager windowManager, ViewModelLocator viewModelLocator)
         {
             cardRepository = new CardRepository();
             card = new Card();
             CardService = cardService;
             _windowManager = windowManager;
             _viewModelLocator = viewModelLocator;
+            NavigationService = navigationService;
+
             LoginCommand = new RelayCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
         }
 
         public ICommand LoginCommand { get; }
+
+        public INavigationService NavigationService
+        {
+            get => _navigationService;
+            set
+            {
+                _navigationService = value;
+                OnPropertyChanged();
+            }
+        }
 
         public string CardNumber
         {
@@ -69,6 +82,8 @@ namespace Primat_ATM.ViewModel
                     CardService.Authenticate(cardRepository.GetByCardNumber(CardNumber));
                     ErrorMessage = "";
                     _windowManager.ShowWindow(_viewModelLocator.MainViewModel);
+                    NavigationService.NavigateTo<TransactionsViewModel>();
+                    ErrorMessage = "";
                 }
                 else
                 {

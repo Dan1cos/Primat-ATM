@@ -1,5 +1,4 @@
-﻿using Primat_ATM.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,22 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Primat_ATM.View
 {
     /// <summary>
-    /// Логика взаимодействия для CardOperations.xaml
+    /// Interaction logic for TestWindow.xaml
     /// </summary>
-    public partial class CardOperationsWindow : UserControl
+    public partial class TestWindow : UserControl
     {
-        public CardOperationsWindow()
+        public TestWindow()
         {
             InitializeComponent();
-        }
-        private void Cancel(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

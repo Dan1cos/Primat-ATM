@@ -1,5 +1,4 @@
-﻿using Primat_ATM.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,17 +15,14 @@ using System.Windows.Shapes;
 namespace Primat_ATM.View
 {
     /// <summary>
-    /// Логика взаимодействия для CardOperations.xaml
+    /// Логика взаимодействия для EnterPassword.xaml
     /// </summary>
-    public partial class CardOperationsWindow : UserControl
+    public partial class EnterPasswordWindow : UserControl
     {
-        public CardOperationsWindow()
+        public EnterPasswordWindow()
         {
+
             InitializeComponent();
-        }
-        private void Cancel(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -16,17 +16,13 @@ using System.Windows.Shapes;
 namespace Primat_ATM.View
 {
     /// <summary>
-    /// Логика взаимодействия для CardOperations.xaml
+    /// Логика взаимодействия для MoneyWithdrawalWindow.xaml
     /// </summary>
-    public partial class CardOperationsWindow : UserControl
+    public partial class MoneyWithdrawalWindow : UserControl
     {
-        public CardOperationsWindow()
+        public MoneyWithdrawalWindow()
         {
             InitializeComponent();
-        }
-        private void Cancel(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

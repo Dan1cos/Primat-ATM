@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Primat_ATM.View;
+using Primat_ATM.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -15,13 +18,12 @@ using System.Windows.Shapes;
 namespace Primat_ATM.View
 {
     /// <summary>
-    /// Логика взаимодействия для EnterPassword.xaml
+    /// Логика взаимодействия для StatementWindow.xaml
     /// </summary>
-    public partial class EnterPasswordWindow : Window
+    public partial class StatementWindow : UserControl
     {
-        public EnterPasswordWindow()
+        public StatementWindow()
         {
-
             InitializeComponent();
         }
     }

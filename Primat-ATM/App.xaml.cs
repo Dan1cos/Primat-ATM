@@ -25,8 +25,17 @@ namespace Primat_ATM
 
             services.AddSingleton<LoginViewModel>();
             services.AddSingleton<MainViewModel>();
-            services.AddSingleton<SettingsViewModel>();
+            services.AddSingleton<TransactionsViewModel>();
+            services.AddSingleton<WithdrawViewModel>();
             services.AddSingleton<DepositViewModel>();
+            services.AddSingleton<TransferViewModel>();
+            services.AddSingleton<SettingsViewModel>();
+            services.AddSingleton<BalanceViewModel>();
+            services.AddSingleton<StatementViewModel>();
+            services.AddSingleton<OtherWithdrawViewModel>();
+            services.AddSingleton<ChangeEmailViewModel>();
+            services.AddSingleton<ChangePasswordViewModel>();
+            
 
             services.AddSingleton<ViewModelLocator>();
             services.AddSingleton<WindowMapper>();
