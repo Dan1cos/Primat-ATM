@@ -22,7 +22,7 @@
             <TextBlock Grid.Row="1" x:Name="Headline_CardNumber" Style="{StaticResource StandartCardNumber}" VerticalAlignment="Top"/>
         </Grid>
 
-        <TextBox Grid.Row="1" x:Name="txtBoxNewEmail" Tag="New Email" Style="{StaticResource StandartTextBox}"/>
+        <TextBox Grid.Row="1" x:Name="txtBoxNewEmail" Tag="New Email" Style="{StaticResource StandartTextBox}" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -31,7 +31,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Content="Cancel" Style="{StaticResource StandartButton}" Command="{Binding NavigateCancelCommand}"/>
-            <Button Grid.Column="1" Content="Change" Style="{StaticResource StandartButton}"/>
+            <Button Grid.Column="1" Content="Change" Style="{StaticResource StandartButton}" Command="{Binding ChangeEmailCommand}"/>
         </Grid>
     </Grid>
 </UserControl>
