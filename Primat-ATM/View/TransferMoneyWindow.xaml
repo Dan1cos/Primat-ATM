@@ -33,7 +33,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Content="Cancel" Style="{StaticResource StandartButton}"/>
+            <Button Grid.Column="0" Content="Cancel" Style="{StaticResource StandartButton}" Command="{Binding NavigateCancelCommand}"/>
             <Button Grid.Column="1" Content="Transfer" Style="{StaticResource StandartButton}"/>
         </Grid>
     </Grid>

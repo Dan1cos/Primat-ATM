@@ -24,5 +24,6 @@ namespace Primat_ATM.View
         {
             InitializeComponent();
         }
+
     }
 }

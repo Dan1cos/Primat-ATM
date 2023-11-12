@@ -15,6 +15,6 @@
         <ContentControl Grid.Row="0" Content="{Binding NavigationService.CurrentView}">
 
         </ContentControl>
-        <Button Grid.Row="1" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Command="{Binding EndSession}">End session</Button>
+        <Button Grid.Row="1" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click">End session</Button>
     </Grid>
 </Window>

@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace Primat_ATM.ViewModel
 {
-    public class BalanceViewModel: ViewModelBase
+    public class OtherWithdrawViewModel: ViewModelBase
     {
         private INavigationService _navigationService;
         public RelayCommand NavigateCancelCommand { get; set; }
-        public BalanceViewModel(INavigationService navigationService)
+        public OtherWithdrawViewModel(INavigationService navigationService)
         {
             NavigationService = navigationService;
 
-            NavigateCancelCommand = new RelayCommand(o => { NavigationService.NavigateTo<TransactionsViewModel>(); }, o => true);
+            NavigateCancelCommand = new RelayCommand(o => { NavigationService.NavigateTo<WithdrawViewModel>(); }, o => true);
         }
 
         public INavigationService NavigationService

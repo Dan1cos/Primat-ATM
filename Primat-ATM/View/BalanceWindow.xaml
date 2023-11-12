@@ -15,6 +15,6 @@
 
         <TextBlock Grid.Column="0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Balance: 100UAH" Style="{StaticResource StandartHeadline}" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <Button Grid.Row="2" Content="Go Back" Style="{StaticResource StandartButton}"  VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="40,0,0,0"/>
+        <Button Grid.Row="2" Content="Go Back" Style="{StaticResource StandartButton}"  VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="40,0,0,0" Command="{Binding NavigateCancelCommand}"/>
     </Grid>
 </UserControl>

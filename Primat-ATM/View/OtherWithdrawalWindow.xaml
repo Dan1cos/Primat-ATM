@@ -26,7 +26,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Content="Cancel" Style="{StaticResource StandartButton}"/>
+            <Button Content="Cancel" Style="{StaticResource StandartButton}" Command="{Binding NavigateCancelCommand}"/>
             <Button Grid.Column="1" Content="Withdraw" Style="{StaticResource StandartButton}"/>
         </Grid>
     </Grid>

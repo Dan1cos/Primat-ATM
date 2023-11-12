@@ -25,9 +25,9 @@
 
         <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="1" Grid.ColumnSpan="2" Text="Card: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <Button Grid.Row="2" Grid.Column="0" Content="Change PIN" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="2" Grid.Column="0" Content="Change PIN" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Command="{Binding NavigateChangePasswordWindowCommand}"/>
 
-        <Button Grid.Row="3" Grid.Column="0" Content="Change email" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="3" Grid.Column="0" Content="Change email" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Command="{Binding NavigateChangeEmailWindowCommand}"/>
 
         <StackPanel Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0">
             <Grid>
@@ -41,7 +41,7 @@
             </Grid>
         </StackPanel>
 
-        <Button Grid.Row="5" Grid.Column="0" Content="Go back" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="5" Grid.Column="0" Content="Go back" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Command="{Binding NavigateCancelCommand}"/>
 
     </Grid>
 </UserControl>

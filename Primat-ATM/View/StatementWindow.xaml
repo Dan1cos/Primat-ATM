@@ -52,7 +52,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Button Content="Send on Email" Style="{StaticResource StandartButton}" Margin="10,0,0,0"/>
-                <Button Content="Close" Grid.Column="1" Style="{StaticResource StandartButton}" Margin="10,0,0,0" Cursor="Hand"/>
+                <Button Content="Close" Grid.Column="1" Style="{StaticResource StandartButton}" Margin="10,0,0,0" Cursor="Hand" Command="{Binding NavigateCancelCommand}"/>
             </Grid>
         </StackPanel>
     </Grid>

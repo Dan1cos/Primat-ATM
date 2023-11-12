@@ -40,6 +40,7 @@ namespace Primat_ATM.ViewModel
             NavigateSettingsWindowCommand = new RelayCommand(o => { NavigationService.NavigateTo<SettingsViewModel>(); }, o => true);
             NavigateBalanceWindowCommand = new RelayCommand(o => { NavigationService.NavigateTo<BalanceViewModel>(); }, o => true);
             NavigateStatementWindowCommand = new RelayCommand(o => { NavigationService.NavigateTo<StatementViewModel>(); }, o => true);
+            
         }
 
         public INavigationService NavigationService

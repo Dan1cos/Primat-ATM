@@ -24,6 +24,9 @@ namespace Primat_ATM.ViewModel.Services
         public SettingsViewModel SettingsViewModel => _provider.GetRequiredService<SettingsViewModel>();
         public BalanceViewModel BalanceViewModel => _provider.GetRequiredService<BalanceViewModel>();
         public StatementViewModel StatementViewModel => _provider.GetRequiredService<StatementViewModel>();
+        public OtherWithdrawViewModel OtherWithdrawViewModel => _provider.GetRequiredService<OtherWithdrawViewModel>();
+        public ChangeEmailViewModel ChangeEmailViewModel => _provider.GetRequiredService<ChangeEmailViewModel>();
+        public ChangePasswordViewModel ChangePasswordViewModel => _provider.GetRequiredService<ChangePasswordViewModel>();
         
     }
 }

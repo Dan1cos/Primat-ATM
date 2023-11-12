@@ -26,6 +26,15 @@
         <DataTemplate DataType="{x:Type TypeName=viewModel:StatementViewModel}">
             <view:StatementWindow/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type TypeName=viewModel:OtherWithdrawViewModel}">
+            <view:OtherWithdrawalWindow/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type TypeName=viewModel:ChangeEmailViewModel}">
+            <view:ChangeEmailWindow/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type TypeName=viewModel:ChangePasswordViewModel}">
+            <view:ChangePasswordWindow/>
+        </DataTemplate>
 
         <!-- TextBox colors -->
         <SolidColorBrush x:Key="StandatrBackgroundColor" Color="#D9D9D9"/>
