@@ -19,9 +19,9 @@ namespace Primat_ATM.ViewModel
         private string _errorMessage;
         private INavigationService _navigationService;
         private ICardRepository CardRepository;
-        public ICardService CardService { get; private set; }
+        public ICardService CardService { get; }
         public RelayCommand NavigateCancelCommand { get; set; }
-        public ICommand ChangePasswordCommand { get; }
+        public RelayCommand ChangePasswordCommand { get; set; }
         private ConfirmationDialog _confirmPin;
         public ChangePasswordViewModel(INavigationService navigationService, ICardService cardService)
         {
@@ -79,6 +79,7 @@ namespace Primat_ATM.ViewModel
             {
                 if (CanExecuteChangePasswordCommand(obj))
                 {
+                    ErrorMessage = "";
                     CardService.Card.Pin = _card.Pin;
                     CardRepository.Edit(CardService.Card);
                     NavigationService.NavigateTo<SettingsViewModel>();
@@ -93,8 +94,7 @@ namespace Primat_ATM.ViewModel
         private bool CanExecuteChangePasswordCommand(object obj) {
             return !string.IsNullOrWhiteSpace(NewPin) && NewPin.Length == 4 && NewPin.All(char.IsDigit) &&
                 !string.IsNullOrWhiteSpace(RepeatNewPin) && RepeatNewPin.Length == 4 && RepeatNewPin.All(char.IsDigit) &&
-                RepeatNewPin.Equals(NewPin)
-                ? true : false;
+                RepeatNewPin.Equals(NewPin);
         }
     }
 }

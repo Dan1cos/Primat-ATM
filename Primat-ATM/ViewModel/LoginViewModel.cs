@@ -96,12 +96,7 @@ namespace Primat_ATM.ViewModel
 
         private bool CanExecuteLoginCommand(object obj)
         {
-            bool validData = false;
-            if (!string.IsNullOrWhiteSpace(CardNumber) && CardNumber.Length == 16 && CardNumber.All(char.IsDigit) && !string.IsNullOrWhiteSpace(Pin) && Pin.Length == 4 && Pin.All(char.IsDigit))
-            {
-                validData = true;
-            }
-            return validData;
+            return !string.IsNullOrWhiteSpace(CardNumber) && CardNumber.Length == 16 && CardNumber.All(char.IsDigit) && !string.IsNullOrWhiteSpace(Pin) && Pin.Length == 4 && Pin.All(char.IsDigit);
         }
     }
 }
