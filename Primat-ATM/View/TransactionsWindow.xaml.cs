@@ -1,4 +1,4 @@
-﻿using Primat_ATM.View.TransactionsWindows.ModalWindows;
+﻿using Primat_ATM.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,7 @@ namespace Primat_ATM.View
     /// <summary>
     /// Логика взаимодействия для CardTransactions.xaml
     /// </summary>
-    public partial class TransactionsWindow : Window
+    public partial class TransactionsWindow : UserControl
     {
         public TransactionsWindow()
         {

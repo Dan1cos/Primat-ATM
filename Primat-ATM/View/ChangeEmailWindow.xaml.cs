@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Primat_ATM.View
 {
     /// <summary>
-    /// Логика взаимодействия для CardOperations.xaml
+    /// Логика взаимодействия для ChangeEmailWindow.xaml
     /// </summary>
-    public partial class CardOperationsWindow : UserControl
+    public partial class ChangeEmailWindow : UserControl
     {
-        public CardOperationsWindow()
+        public ChangeEmailWindow()
         {
             InitializeComponent();
         }

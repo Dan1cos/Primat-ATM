@@ -17,29 +17,12 @@ namespace Primat_ATM.View
     /// <summary>
     /// Логика взаимодействия для EnterPassword.xaml
     /// </summary>
-    public partial class EnterPasswordWindow : Window
+    public partial class EnterPasswordWindow : UserControl
     {
-        private string card_number;
-        private bool isCorrectPassword;
         public EnterPasswordWindow()
         {
-/*            this.card_number = card_number;
-            isCorrectPassword = false;*/
 
             InitializeComponent();
         }
-
-/*        private void CheckTheLogin(object sender, RoutedEventArgs e)
-        {
-            isCorrectPassword = true;
-            this.Close();
-        }
-
-        public bool ShowCustomDialog()
-        {
-            ShowDialog();
-
-            return isCorrectPassword;
-        }*/
     }
 }

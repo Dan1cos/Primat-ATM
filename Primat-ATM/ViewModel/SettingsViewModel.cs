@@ -10,10 +10,21 @@ namespace Primat_ATM.ViewModel
     public class SettingsViewModel : ViewModelBase
     {
         public ICardService CardService { get; set; }
-        public SettingsViewModel(ICardService cardService)
+        private INavigationService _navigationService;
+        public SettingsViewModel(INavigationService navigationService, ICardService cardService)
         {
             CardService = cardService;
+            NavigationService = navigationService;
+        }
 
+        public INavigationService NavigationService
+        {
+            get => _navigationService;
+            set
+            {
+                _navigationService = value;
+                OnPropertyChanged();
+            }
         }
     }
 }
