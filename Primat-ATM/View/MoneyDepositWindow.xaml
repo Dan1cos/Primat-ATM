@@ -23,7 +23,7 @@
             <TextBlock Grid.Row="1" x:Name="Headline_CardNumber" Style="{StaticResource StandartCardNumber}"/>
         </Grid>
 
-        <TextBox Grid.Row="1" x:Name="txtBoxAmount" Style="{StaticResource StandartTextBox}" Tag="Amount"/>
+        <TextBox Grid.Row="1" x:Name="txtBoxAmount" Style="{StaticResource StandartTextBox}" Tag="Amount" Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -32,7 +32,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Content="Cancel" Style="{StaticResource StandartButton}" Command="{Binding NavigateCancelCommand}"/>
-            <Button Grid.Column="1" Content="Deposit" Style="{StaticResource StandartButton}"/>
+            <Button Grid.Column="1" Content="Deposit" Style="{StaticResource StandartButton}" Command="{Binding DepositCommand}"/>
         </Grid>
     </Grid>
 </UserControl>

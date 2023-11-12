@@ -31,7 +31,7 @@ namespace Primat_ATM
             services.AddSingleton<TransferViewModel>();
             services.AddSingleton<SettingsViewModel>();
             services.AddSingleton<BalanceViewModel>();
-            services.AddSingleton<StatementViewModel>();
+            services.AddTransient<StatementViewModel>();
             services.AddSingleton<OtherWithdrawViewModel>();
             services.AddSingleton<ChangeEmailViewModel>();
             services.AddSingleton<ChangePasswordViewModel>();

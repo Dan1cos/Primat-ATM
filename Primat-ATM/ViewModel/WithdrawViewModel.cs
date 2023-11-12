@@ -1,24 +1,34 @@
-﻿using Primat_ATM.ViewModel.Services;
+﻿using Primat_ATM.Model;
+using Primat_ATM.Repository;
+using Primat_ATM.ViewModel.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Primat_ATM.ViewModel
 {
     public class WithdrawViewModel: ViewModelBase
     {
         private INavigationService _navigationService;
-
+        private ICardRepository cardRepository;
+        private ITransactionRepository transactionRepository;
+        public ICardService CardService { get; set; }
         public RelayCommand NavigateOtherWithdrawWindowCommand { get; set; }
         public RelayCommand NavigateCancelCommand { get; set; }
-        public WithdrawViewModel(INavigationService navigationService)
+        public RelayCommand WithdrawCommand { get; set; }
+        public WithdrawViewModel(INavigationService navigationService, ICardService cardService)
         {
             NavigationService = navigationService;
+            cardRepository = new CardRepository();
+            transactionRepository = new TransactionRepository();
+            CardService = cardService;
 
             NavigateOtherWithdrawWindowCommand = new RelayCommand(o => { NavigationService.NavigateTo<OtherWithdrawViewModel>(); }, o => true);
             NavigateCancelCommand = new RelayCommand(o => { NavigationService.NavigateTo<TransactionsViewModel>(); }, o => true);
+            WithdrawCommand = new RelayCommand(ExecuteWithdrawCommand);
         }
 
         public INavigationService NavigationService
@@ -28,6 +38,29 @@ namespace Primat_ATM.ViewModel
             {
                 _navigationService = value;
                 OnPropertyChanged();
+            }
+        }
+
+        private void ExecuteWithdrawCommand(object obj)
+        {
+            float amount = float.Parse(obj.ToString());
+            bool isValidSum = CardService.Card.Balance >= amount;
+            if (isValidSum)
+            {
+                CardService.Card.Balance -= amount;
+                cardRepository.Edit(CardService.Card);
+                Transaction trans = new Transaction();
+                trans.Amount = amount;
+                trans.FromId = CardService.Card.CardId;
+                trans.ToId = 1;
+                trans.Timestamp = DateTime.Now;
+                transactionRepository.Add(trans);
+                MessageBox.Show("Success");
+                NavigationService.NavigateTo<TransactionsViewModel>();
+            }
+            else
+            {
+                MessageBox.Show("Insufficient sum");
             }
         }
     }

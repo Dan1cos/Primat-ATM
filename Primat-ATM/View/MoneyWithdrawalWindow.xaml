@@ -25,15 +25,15 @@
 
         <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="1" Grid.ColumnSpan="2" Text="Card: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <Button Grid.Row="2" Grid.Column="0" Content="100 UAH" Tag="100" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Button Grid.Row="2" Grid.Column="1" Content="2000 UAH" Tag="2000" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="2" Grid.Column="0" Content="100 UAH" Tag="100" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Command="{Binding WithdrawCommand}" CommandParameter="100"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="2000 UAH" Tag="2000" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  Command="{Binding WithdrawCommand}" CommandParameter="2000"/>
 
-        <Button Grid.Row="3" Grid.Column="0" Content="200 UAH" Tag="200" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="3" Grid.Column="0" Content="200 UAH" Tag="200" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  Command="{Binding WithdrawCommand}" CommandParameter="200"/>
         <Button Grid.Row="3" Grid.Column="1" Content="Other" Tag="Other" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Command="{Binding NavigateOtherWithdrawWindowCommand}"/>
 
-        <Button Grid.Row="4" Grid.Column="0" Content="500 UAH" Tag="500" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="4" Grid.Column="0" Content="500 UAH" Tag="500" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  Command="{Binding WithdrawCommand}" CommandParameter="500"/>
 
-        <Button Grid.Row="5" Grid.Column="0" Content="1000 UAH" Tag="1000" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button Grid.Row="5" Grid.Column="0" Content="1000 UAH" Tag="1000" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  Command="{Binding WithdrawCommand}" CommandParameter="1000"/>
         <Button Grid.Row="5" Grid.Column="1" Content="Cancel" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Command="{Binding NavigateCancelCommand}"/>
 
     </Grid>

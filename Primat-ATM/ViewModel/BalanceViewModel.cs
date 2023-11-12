@@ -11,11 +11,18 @@ namespace Primat_ATM.ViewModel
     {
         private INavigationService _navigationService;
         public RelayCommand NavigateCancelCommand { get; set; }
-        public BalanceViewModel(INavigationService navigationService)
+        public ICardService CardService { get; set; }
+        public BalanceViewModel(INavigationService navigationService, ICardService cardService)
         {
             NavigationService = navigationService;
+            CardService = cardService;
 
             NavigateCancelCommand = new RelayCommand(o => { NavigationService.NavigateTo<TransactionsViewModel>(); }, o => true);
+        }
+
+        public float Amount
+        {
+            get => CardService.Card.Balance;
         }
 
         public INavigationService NavigationService
