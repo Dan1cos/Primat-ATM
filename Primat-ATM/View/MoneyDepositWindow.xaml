@@ -20,7 +20,7 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Text="Money deposit" Style="{StaticResource StandartHeadline}"/>
-            <TextBlock Grid.Row="1" x:Name="Headline_CardNumber" Style="{StaticResource StandartCardNumber}"/>
+            <TextBlock Grid.Row="1" x:Name="Headline_CardNumber" Style="{StaticResource StandartCardNumber}" Text="{Binding CardService.Card.CardNumber, StringFormat='Card: {0}'}"/>
         </Grid>
 
         <TextBox Grid.Row="1" x:Name="txtBoxAmount" Style="{StaticResource StandartTextBox}" Tag="Amount" Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}"/>

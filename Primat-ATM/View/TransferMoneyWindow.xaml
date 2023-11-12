@@ -19,7 +19,7 @@
 
         <TextBlock Grid.Row="0" Style="{StaticResource StandartHeadline}" Text="Transfer money"/>
 
-        <TextBlock Grid.Row="1" x:Name="HeadLine_CardNumber" Style="{StaticResource StandartCardNumber}" HorizontalAlignment="Left" Margin="20 0 0 0"/>
+        <TextBlock Grid.Row="1" x:Name="HeadLine_CardNumber" Style="{StaticResource StandartCardNumber}" HorizontalAlignment="Left" Margin="20 0 0 0" Text="{Binding CardService.Card.CardNumber, StringFormat='Card: {0}'}"/>
 
         <TextBox Grid.Row="2" x:Name="txtBoxCardNumber" Style="{StaticResource StandartTextBox}" Tag="Card number" HorizontalAlignment="Left" Margin="20,0,0,0" Text="{Binding CardNumber, UpdateSourceTrigger=PropertyChanged}"/>
 

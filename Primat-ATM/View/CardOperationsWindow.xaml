@@ -23,7 +23,7 @@
 
         <TextBlock x:Name="HeadLine_Name" Grid.Row="0" Grid.ColumnSpan="2" Text="Card operations" Style="{StaticResource StandartHeadline}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="1" Grid.ColumnSpan="2" Text="Card: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding CardService.Card.CardNumber, StringFormat='Card: {0}'}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <Button Grid.Row="2" Grid.Column="0" Content="Change PIN" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Command="{Binding NavigateChangePasswordWindowCommand}"/>
 

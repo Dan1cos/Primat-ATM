@@ -23,7 +23,7 @@
 
         <TextBlock x:Name="HeadLine_Name" Grid.Row="0" Grid.ColumnSpan="2" Text="Select the amount you want to withdraw" Style="{StaticResource StandartHeadline}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="1" Grid.ColumnSpan="2" Text="Card: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding CardService.Card.CardNumber, StringFormat='Card: {0}'}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <Button Grid.Row="2" Grid.Column="0" Content="100 UAH" Tag="100" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Command="{Binding WithdrawCommand}" CommandParameter="100"/>
         <Button Grid.Row="2" Grid.Column="1" Content="2000 UAH" Tag="2000" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  Command="{Binding WithdrawCommand}" CommandParameter="2000"/>

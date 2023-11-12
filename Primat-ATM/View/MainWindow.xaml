@@ -31,7 +31,7 @@
             <TextBlock x:Name="txtBlockError" Width="200" Foreground="Red" Text="{Binding ErrorMessage, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
 
-        <Button Grid.Row="2" Content="Send" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Margin="0,0,40,0" Command="{Binding LoginCommand}"/>
+        <Button Grid.Row="2" Content="Login" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Margin="0,0,40,0" Command="{Binding LoginCommand}"/>
 
     </Grid>
 </Window>
