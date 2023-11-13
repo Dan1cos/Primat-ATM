@@ -15,7 +15,7 @@ namespace Primat_ATM.ViewModel
     public class ChangeEmailViewModel:ViewModelBase
     {
         private string _email;
-        private const string _match = @"([a-zA-Z0-9.]+)\@[a-zA-Z0-9.]+\.[[:alpha:]]{2,}$";
+        private const string _match = @"([a-zA-Z0-9.]+)\@[a-zA-Z0-9.]+\.[a-zA-Z]{2,}$";
         //private string _confirmMessage;
         private string _errorMessage;
         private INavigationService _navigationService;
@@ -30,7 +30,7 @@ namespace Primat_ATM.ViewModel
             CardRepository = new CardRepository();
             NavigationService = navigationService;
             CardService = cardService;
-            Regex regex = new Regex(_match);
+            regex = new Regex(_match);
             //_confirmMessage = "Are you sure you want to change the password?";
             _confirmEmail = new ConfirmationDialog();
             NavigateCancelCommand = new RelayCommand(o => { NavigationService.NavigateTo<SettingsViewModel>(); }, o => true);
@@ -59,6 +59,9 @@ namespace Primat_ATM.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        public Regex Regex { get => regex;  }
+
         private void ExecuteChangeEmailCommand(object obj)
         {
             _confirmEmail.ConfirmationDilog("Are you sure you want to change the email?");
@@ -80,7 +83,7 @@ namespace Primat_ATM.ViewModel
         }
         private bool CanExecuteChangeEmailCommand(object obj)
         {
-            return !string.IsNullOrWhiteSpace(Email) && Email.Length <= 45 && regex.Match(Email).Success;
+            return !string.IsNullOrWhiteSpace(Email) && Email.Length <= 45 && Regex.Match(Email).Success;
         }
     }
 }
