@@ -79,9 +79,9 @@ namespace Primat_ATM.ViewModel
                 if (isValidCard)
                 {
                     CardService.Authenticate(cardRepository.GetByCardNumber(CardNumber));
-                    _windowManager.ShowWindow(_viewModelLocator.MainViewModel);
                     NavigationService.NavigateTo<TransactionsViewModel>();
                     ErrorMessage = "";
+                    _windowManager.ShowDialog(_viewModelLocator.MainViewModel);
                 }
                 else
                 {

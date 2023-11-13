@@ -70,6 +70,10 @@ namespace Primat_ATM.ViewModel
                     ErrorMessage = "";
                     CardService.Card.Email = _email;
                     CardRepository.Edit(CardService.Card);
+                    if (CardService.Card.SendNotification)
+                    {
+                        EmailSender.SendEmail(CardService.Card.Email, "Email change", "<div>Email in Primat ATM was changed to this email</div>");
+                    }
                     NavigationService.NavigateTo<SettingsViewModel>();
                 }
                 else

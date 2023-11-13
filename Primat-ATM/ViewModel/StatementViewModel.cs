@@ -81,10 +81,10 @@ namespace Primat_ATM.ViewModel
                 switch (_selectedComboBoxId)
                 {
                     case 1:
-                        TransactionList = transactionRepository.GetByToId(CardService.Card.CardId);
+                        TransactionList = transactionRepository.GetByFromId(CardService.Card.CardId);
                         break;
                     default:
-                        TransactionList = transactionRepository.GetByFromId(CardService.Card.CardId);
+                        TransactionList = transactionRepository.GetByToId(CardService.Card.CardId);
                         break;
                 }
             }

@@ -57,6 +57,10 @@ namespace Primat_ATM.ViewModel
             trans.Timestamp = DateTime.Now;
             transactionRepository.Add(trans);
             MessageBox.Show("Success");
+            if (CardService.Card.SendNotification)
+            {
+                EmailSender.SendEmail(CardService.Card.Email, "Deposit to card", $"<div>{Amount} UAH were deposited to {CardService.Card.CardNumber}</div>");
+            }
             NavigationService.NavigateTo<TransactionsViewModel>();
         }
 

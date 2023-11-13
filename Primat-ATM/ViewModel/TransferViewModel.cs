@@ -86,6 +86,14 @@ namespace Primat_ATM.ViewModel
                     transactionRepository.Add(trans);
                     ErrorMessage = "";
                     MessageBox.Show("Success");
+                    if (CardService.Card.SendNotification)
+                    {
+                        EmailSender.SendEmail(CardService.Card.Email, "Transfer from card", $"<div>{Amount} UAH were transfered to {cardTo.CardNumber} from {CardService.Card.CardNumber}</div>");
+                    }
+                    if (cardTo.SendNotification)
+                    {
+                        EmailSender.SendEmail(cardTo.Email, "Transfer to card", $"<div>{Amount} UAH were transfered to {cardTo.CardNumber} from {CardService.Card.CardNumber}</div>");
+                    }    
                     NavigationService.NavigateTo<TransactionsViewModel>();
                 }
                 else

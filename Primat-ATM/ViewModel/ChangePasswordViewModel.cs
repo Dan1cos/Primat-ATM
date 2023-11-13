@@ -73,6 +73,10 @@ namespace Primat_ATM.ViewModel
                 {
                     CardService.Card.Pin = _card.Pin;
                     CardRepository.Edit(CardService.Card);
+                    if (CardService.Card.SendNotification)
+                    {
+                        EmailSender.SendEmail(CardService.Card.Email, "PIN change", "<div>PIN in Primat ATM was changed</div>");
+                    }
                     NavigationService.NavigateTo<SettingsViewModel>();
                 }
                 else

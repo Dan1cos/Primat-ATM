@@ -36,7 +36,7 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
 
-                <CheckBox x:Name="IsSendEmail" Grid.Row="4" Grid.Column="0" Style="{DynamicResource ToggleButtonStyle}" Margin="0,0,10,0"/>
+                <CheckBox x:Name="IsSendEmail" Grid.Row="4" Grid.Column="0" Style="{DynamicResource ToggleButtonStyle}" Margin="0,0,10,0" IsChecked="{Binding SendEmail, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Grid.Row="4" Grid.Column="1" Text="Send a message to the Email" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
         </StackPanel>
