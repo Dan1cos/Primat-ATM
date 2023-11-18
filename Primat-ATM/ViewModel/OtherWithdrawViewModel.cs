@@ -85,12 +85,7 @@ namespace Primat_ATM.ViewModel
 
         private bool CanExecuteWithdrawCommand(object obj)
         {
-            bool validData = false;
-            if (!float.IsNaN(Amount) && !float.IsNegative(Amount) && Amount != 0)
-            {
-                validData = true;
-            }
-            return validData;
+            return !float.IsNaN(Amount) && !float.IsNegative(Amount) && Amount != 0;
         }
     }
 }

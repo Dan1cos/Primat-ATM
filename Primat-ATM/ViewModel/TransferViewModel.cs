@@ -109,12 +109,7 @@ namespace Primat_ATM.ViewModel
 
         private bool CanExecuteTransferCommand(object obj)
         {
-            bool validData = false;
-            if (!string.IsNullOrWhiteSpace(CardNumber) && CardNumber.Length == 16 && CardNumber.All(char.IsDigit) && !float.IsNaN(Amount) && !float.IsNegative(Amount) && Amount!=0)
-            {
-                validData = true;
-            }
-            return validData;
+            return !string.IsNullOrWhiteSpace(CardNumber) && CardNumber.Length == 16 && CardNumber.All(char.IsDigit) && !float.IsNaN(Amount) && !float.IsNegative(Amount) && Amount != 0;
         }
     }
 }
