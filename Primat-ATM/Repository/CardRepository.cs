@@ -20,7 +20,7 @@ namespace Primat_ATM.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "insert into card(cardNumber, balance, email, pin, sendNotification) values (@cardNumber, @balance, @email, @pin, @sendNotification)";
+                command.CommandText = "insert into Card(cardNumber, balance, email, pin, sendNotification) values (@cardNumber, @balance, @email, @pin, @sendNotification)";
                 command.Parameters.Add("@cardNumber", MySqlDbType.VarChar).Value = card.CardNumber;
                 command.Parameters.Add("@balance", MySqlDbType.Float).Value = card.Balance;
                 command.Parameters.Add("@email", MySqlDbType.VarChar).Value = card.Email;
@@ -38,7 +38,7 @@ namespace Primat_ATM.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "select * from card where cardNumber=@cardNumber and pin=@pin";
+                command.CommandText = "select * from Card where cardNumber=@cardNumber and pin=@pin";
                 command.Parameters.Add("@cardNumber", MySqlDbType.VarChar).Value = credential.UserName;
                 command.Parameters.Add("@pin", MySqlDbType.VarChar).Value = credential.Password;
                 isValid = command.ExecuteScalar() != null;
@@ -53,7 +53,7 @@ namespace Primat_ATM.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "update card set cardNumber=@cardNumber, balance=@balance, email=@email, pin=@pin, sendNotification=@sendNotification where cardId=@cardId";
+                command.CommandText = "update Card set cardNumber=@cardNumber, balance=@balance, email=@email, pin=@pin, sendNotification=@sendNotification where cardId=@cardId";
                 command.Parameters.Add("@cardNumber", MySqlDbType.VarChar).Value = card.CardNumber;
                 command.Parameters.Add("@balance", MySqlDbType.Float).Value = card.Balance;
                 command.Parameters.Add("@email", MySqlDbType.VarChar).Value = card.Email;
@@ -72,7 +72,7 @@ namespace Primat_ATM.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "select * from card where cardNumber=@cardNumber";
+                command.CommandText = "select * from Card where cardNumber=@cardNumber";
                 command.Parameters.Add("@cardNumber", MySqlDbType.VarChar).Value = cardNumber;
                 using (var reader = command.ExecuteReader())
                 {
@@ -106,7 +106,7 @@ namespace Primat_ATM.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "select * from card where cardId=@cardId";
+                command.CommandText = "select * from Card where cardId=@cardId";
                 command.Parameters.Add("@cardId", MySqlDbType.Int32).Value = id;
                 using (var reader = command.ExecuteReader())
                 {
@@ -139,7 +139,7 @@ namespace Primat_ATM.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "delete from card where cardId=@cardId";
+                command.CommandText = "delete from Card where cardId=@cardId";
                 command.Parameters.Add("@cardId", MySqlDbType.Int32).Value = id;
                 command.ExecuteNonQuery();
             }
