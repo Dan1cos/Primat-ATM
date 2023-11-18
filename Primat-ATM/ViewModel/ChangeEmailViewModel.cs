@@ -16,7 +16,7 @@ namespace Primat_ATM.ViewModel
     {
         private string _email;
         private const string _match = @"([a-zA-Z0-9.]+)\@[a-zA-Z0-9.]+\.[a-zA-Z]{2,}$";
-        //private string _confirmMessage;
+        private static string _confirmMessage = "Are you sure you want to change the password?";
         private string _errorMessage;
         private INavigationService _navigationService;
         private ICardRepository CardRepository;
@@ -31,7 +31,6 @@ namespace Primat_ATM.ViewModel
             NavigationService = navigationService;
             CardService = cardService;
             regex = new Regex(_match);
-            //_confirmMessage = "Are you sure you want to change the password?";
             _confirmEmail = new ConfirmationDialog();
             NavigateCancelCommand = new RelayCommand(o => { NavigationService.NavigateTo<SettingsViewModel>(); }, o => true);
             ChangeEmailCommand = new RelayCommand(ExecuteChangeEmailCommand, CanExecuteChangeEmailCommand);
@@ -64,7 +63,7 @@ namespace Primat_ATM.ViewModel
 
         private void ExecuteChangeEmailCommand(object obj)
         {
-            _confirmEmail.ConfirmationDilog("Are you sure you want to change the email?");
+            _confirmEmail.ConfirmationDilog(_confirmMessage);
             if (_confirmEmail.ShowCustomDilog())
             {
                 if (CanExecuteChangeEmailCommand(obj))
@@ -79,7 +78,7 @@ namespace Primat_ATM.ViewModel
                     ErrorMessage = "Incorrect email";
                 }
             }
-
+            _confirmEmail = new ConfirmationDialog();
         }
         private bool CanExecuteChangeEmailCommand(object obj)
         {

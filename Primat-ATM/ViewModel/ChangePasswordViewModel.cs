@@ -15,8 +15,8 @@ namespace Primat_ATM.ViewModel
     {
         Card _card;
         private string _repeatNewPin;
-        //private string _confirmMessage;
         private string _errorMessage;
+        private static string _confirmMessage = "Are you sure you want to change the password?";
         private INavigationService _navigationService;
         private ICardRepository CardRepository;
         public ICardService CardService { get; }
@@ -29,7 +29,6 @@ namespace Primat_ATM.ViewModel
             NavigationService = navigationService;
             CardService = cardService;
             _card = new Card();
-            //_confirmMessage = "Are you sure you want to change the password?";
             _confirmPin = new ConfirmationDialog();
             NavigateCancelCommand = new RelayCommand(o => { NavigationService.NavigateTo<SettingsViewModel>(); }, o => true);
             ChangePasswordCommand = new RelayCommand(ExecuteChangePasswordCommand, CanExecuteChangePasswordCommand);
@@ -45,15 +44,6 @@ namespace Primat_ATM.ViewModel
             get => _repeatNewPin;
             set => _repeatNewPin = value;
         }
-        //public string ConfirmMessage
-        //{
-        //    get => _confirmMessage;
-        //    set
-        //    {
-        //        _confirmMessage = value;
-        //        OnPropertyChanged("ConfirmMessage");
-        //    }
-        //}
         public string ErrorMessage
         {
             get => _errorMessage;
@@ -89,7 +79,7 @@ namespace Primat_ATM.ViewModel
                     ErrorMessage = "Password is either empty or is not 4 digits";
                 }
             }
-            
+            _confirmPin = new ConfirmationDialog();
         }
         private bool CanExecuteChangePasswordCommand(object obj) {
             return !string.IsNullOrWhiteSpace(NewPin) && NewPin.Length == 4 && NewPin.All(char.IsDigit) &&
