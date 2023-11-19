@@ -1,5 +1,6 @@
 ﻿using Primat_ATM.Model;
 using Primat_ATM.Repository;
+using Primat_ATM.View;
 using Primat_ATM.ViewModel.Services;
 using System;
 using System.Collections.Generic;
@@ -22,12 +23,14 @@ namespace Primat_ATM.ViewModel
         private ITransactionRepository transactionRepository;
         private string errorMessage;
         public ICardService CardService { get; set; }
+        private ConfirmationDialog _dialog;
         public TransferViewModel(INavigationService navigationService, ICardService cardService)
         {
             NavigationService = navigationService;
             cardRepository = new CardRepository();
             transactionRepository = new TransactionRepository();
             CardService = cardService;
+            _dialog = new ConfirmationDialog();
 
             NavigateCancelCommand = new RelayCommand(o => { NavigationService.NavigateTo<TransactionsViewModel>(); }, o => true);
             TransferCommand = new RelayCommand(ExecuteTransferCommand, CanExecuteTransferCommand);
@@ -85,7 +88,8 @@ namespace Primat_ATM.ViewModel
                     trans.Timestamp = DateTime.Now;
                     transactionRepository.Add(trans);
                     ErrorMessage = "";
-                    MessageBox.Show("Success");
+                    _dialog.SuccessfulDialog("Successful transfer");
+                    _dialog.ShowCustomDilog();
                     if (CardService.Card.SendNotification)
                     {
                         EmailSender.SendEmail(CardService.Card.Email, "Transfer from card", $"<div>{Amount} UAH were transfered to {cardTo.CardNumber} from {CardService.Card.CardNumber}</div>");
@@ -103,13 +107,13 @@ namespace Primat_ATM.ViewModel
             }
             else
             {
-                ErrorMessage = "Transfered card is unreal";
+                ErrorMessage = "Transfer card is unreal";
             }
         }
 
         private bool CanExecuteTransferCommand(object obj)
         {
-            return !string.IsNullOrWhiteSpace(CardNumber) && CardNumber.Length == 16 && CardNumber.All(char.IsDigit) && !float.IsNaN(Amount) && !float.IsNegative(Amount) && Amount != 0;
+            return !string.IsNullOrWhiteSpace(CardNumber) && CardNumber!=CardService.Card.CardNumber && CardNumber.Length == 16 && CardNumber.All(char.IsDigit) && !float.IsNaN(Amount) && !float.IsNegative(Amount) && Amount != 0;
         }
     }
 }

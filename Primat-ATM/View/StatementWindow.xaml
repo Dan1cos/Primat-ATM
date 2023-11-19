@@ -36,11 +36,11 @@
 
         <DataGrid Grid.Row="2" x:Name="dataGrid" ItemsSource="{Binding TransactionList, UpdateSourceTrigger=PropertyChanged}"
                   IsReadOnly="True" VerticalAlignment="Center" HorizontalAlignment="Center" AutoGenerateColumns="False"
-                  CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False" Margin="0,0,0,10">
+                  CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False" Margin="0,0,0,10" MinHeight="90">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Date" Binding="{Binding Timestamp}"></DataGridTextColumn>
-                <DataGridTextColumn Header="To" Binding="{Binding ToId}"></DataGridTextColumn>
-                <DataGridTextColumn Header="From" Binding="{Binding FromId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="To" Binding="{Binding To}"></DataGridTextColumn>
+                <DataGridTextColumn Header="From" Binding="{Binding From}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Amount" Binding="{Binding Amount}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>

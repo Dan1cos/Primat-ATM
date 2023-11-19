@@ -1,5 +1,6 @@
 ﻿using Primat_ATM.Model;
 using Primat_ATM.Repository;
+using Primat_ATM.View;
 using Primat_ATM.ViewModel.Services;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,14 @@ namespace Primat_ATM.ViewModel
         public ICardService CardService { get; set; }
         private ICardRepository cardRepository;
         private ITransactionRepository transactionRepository;
+        private ConfirmationDialog _dialog;
         public DepositViewModel(INavigationService navigationService, ICardService cardService)
         {
             NavigationService = navigationService;
             CardService = cardService;
             cardRepository = new CardRepository();
             transactionRepository = new TransactionRepository();
+            _dialog = new ConfirmationDialog();
 
             NavigateCancelCommand = new RelayCommand(o => { NavigationService.NavigateTo<TransactionsViewModel>(); }, o => true);
             DepositCommand = new RelayCommand(ExecuteDepositCommand, CanExecuteDepositCommand);
@@ -56,7 +59,8 @@ namespace Primat_ATM.ViewModel
             trans.ToId = CardService.Card.CardId;
             trans.Timestamp = DateTime.Now;
             transactionRepository.Add(trans);
-            MessageBox.Show("Success");
+            _dialog.SuccessfulDialog("Successful deposit");
+            _dialog.ShowCustomDilog();
             if (CardService.Card.SendNotification)
             {
                 EmailSender.SendEmail(CardService.Card.Email, "Deposit to card", $"<div>{Amount} UAH were deposited to {CardService.Card.CardNumber}</div>");

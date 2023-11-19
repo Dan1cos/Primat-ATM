@@ -49,7 +49,7 @@ namespace Primat_ATM.ViewModel.Services
 
         public void CloseWindow()
         {
-            MessageBox.Show("Window closed");
+            
         }
 
         

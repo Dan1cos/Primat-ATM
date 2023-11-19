@@ -1,5 +1,6 @@
 ﻿using Primat_ATM.Model;
 using Primat_ATM.Repository;
+using Primat_ATM.View;
 using Primat_ATM.ViewModel.Services;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,14 @@ namespace Primat_ATM.ViewModel
         public RelayCommand NavigateOtherWithdrawWindowCommand { get; set; }
         public RelayCommand NavigateCancelCommand { get; set; }
         public RelayCommand WithdrawCommand { get; set; }
+        private ConfirmationDialog _dialog;
         public WithdrawViewModel(INavigationService navigationService, ICardService cardService)
         {
             NavigationService = navigationService;
             cardRepository = new CardRepository();
             transactionRepository = new TransactionRepository();
             CardService = cardService;
+            _dialog = new ConfirmationDialog();
 
             NavigateOtherWithdrawWindowCommand = new RelayCommand(o => { NavigationService.NavigateTo<OtherWithdrawViewModel>(); }, o => true);
             NavigateCancelCommand = new RelayCommand(o => { NavigationService.NavigateTo<TransactionsViewModel>(); }, o => true);
@@ -55,7 +58,8 @@ namespace Primat_ATM.ViewModel
                 trans.ToId = 1;
                 trans.Timestamp = DateTime.Now;
                 transactionRepository.Add(trans);
-                MessageBox.Show("Success");
+                _dialog.SuccessfulDialog("Successful withdraw");
+                _dialog.ShowCustomDilog();
                 if (CardService.Card.SendNotification)
                 {
                     EmailSender.SendEmail(CardService.Card.Email, "Withdraw from card", $"<div>{amount} UAH were withdrawed from {CardService.Card.CardNumber}</div>");
@@ -64,7 +68,9 @@ namespace Primat_ATM.ViewModel
             }
             else
             {
-                MessageBox.Show("Insufficient sum");
+                _dialog = new ConfirmationDialog();
+                _dialog.ErrorDialog("Insufficient funds");
+                _dialog.ShowCustomDilog();
             }
         }
     }

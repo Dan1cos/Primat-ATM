@@ -1,5 +1,6 @@
 ﻿using Primat_ATM.Model;
 using Primat_ATM.Repository;
+using Primat_ATM.View;
 using Primat_ATM.ViewModel.Services;
 using System;
 using System.Collections.Generic;
@@ -20,12 +21,14 @@ namespace Primat_ATM.ViewModel
         public ICardService CardService { get; set; }
         public RelayCommand NavigateCancelCommand { get; set; }
         public RelayCommand WithdrawCommand { get; set; }
+        private ConfirmationDialog _dialog;
         public OtherWithdrawViewModel(INavigationService navigationService, ICardService cardService)
         {
             NavigationService = navigationService;
             cardRepository = new CardRepository();
             transactionRepository = new TransactionRepository();
             CardService = cardService;
+            _dialog = new ConfirmationDialog();
 
             NavigateCancelCommand = new RelayCommand(o => { NavigationService.NavigateTo<WithdrawViewModel>(); }, o => true);
             WithdrawCommand = new RelayCommand(ExecuteWithdrawCommand, CanExecuteWithdrawCommand);
@@ -70,7 +73,8 @@ namespace Primat_ATM.ViewModel
                 trans.ToId = 1;
                 trans.Timestamp = DateTime.Now;
                 transactionRepository.Add(trans);
-                MessageBox.Show("Success");
+                _dialog.SuccessfulDialog("Successful withdraw");
+                _dialog.ShowCustomDilog();
                 if (CardService.Card.SendNotification)
                 {
                     EmailSender.SendEmail(CardService.Card.Email, "Withdraw from card", $"<div>{Amount} UAH were withdrawed from {CardService.Card.CardNumber}</div>");

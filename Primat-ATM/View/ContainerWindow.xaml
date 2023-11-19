@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Primat_ATM.View"
         mc:Ignorable="d"
-        Title="ContainerWindow"
+        Title="PrimAtm"
         Style="{StaticResource StandartWindow}">
     <Grid>
         <Grid.RowDefinitions>
