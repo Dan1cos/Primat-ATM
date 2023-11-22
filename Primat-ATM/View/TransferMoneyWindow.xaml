@@ -19,13 +19,13 @@
 
         <TextBlock Grid.Row="0" Style="{StaticResource StandartHeadline}" Text="Transfer money"/>
 
-        <TextBlock Grid.Row="1" x:Name="HeadLine_CardNumber" Style="{StaticResource StandartCardNumber}" HorizontalAlignment="Left" Margin="20 0 0 0"/>
+        <TextBlock Grid.Row="1" x:Name="HeadLine_CardNumber" Style="{StaticResource StandartCardNumber}" HorizontalAlignment="Left" Margin="20 0 0 0" Text="{Binding CardService.Card.CardNumber, StringFormat='Card: {0}'}"/>
 
-        <TextBox Grid.Row="2" x:Name="txtBoxCardNumber" Style="{StaticResource StandartTextBox}" Tag="Card number" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+        <TextBox Grid.Row="2" x:Name="txtBoxCardNumber" Style="{StaticResource StandartTextBox}" Tag="Card number" HorizontalAlignment="Left" Margin="20,0,0,0" Text="{Binding CardNumber, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <TextBox Grid.Row="3" x:Name="txtBoxAmount" Style="{StaticResource StandartTextBox}" Tag="Amount" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+        <TextBox Grid.Row="3" x:Name="txtBoxAmount" Style="{StaticResource StandartTextBox}" Tag="Amount" HorizontalAlignment="Left" Margin="20,0,0,0" Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <TextBox Grid.Row="4" x:Name="txtBoxDescription" Style="{StaticResource StandartTextBox}" Tag="Description" HorizontalAlignment="Left" Margin="20,0,0,0" TextWrapping="Wrap" Height="auto"/>
+        <TextBlock Grid.Row="4" HorizontalAlignment="Left" Margin="20,0,0,0" Height="auto" x:Name="txtBlockError" Width="200" Foreground="Red" Text="{Binding ErrorMessage, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
@@ -34,7 +34,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="0" Content="Cancel" Style="{StaticResource StandartButton}" Command="{Binding NavigateCancelCommand}"/>
-            <Button Grid.Column="1" Content="Transfer" Style="{StaticResource StandartButton}"/>
+            <Button Grid.Column="1" Content="Transfer" Style="{StaticResource StandartButton}" Command="{Binding TransferCommand}"/>
         </Grid>
     </Grid>
 </UserControl>

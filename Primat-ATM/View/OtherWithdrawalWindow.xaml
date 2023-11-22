@@ -15,10 +15,14 @@
 
         <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Withdraw money" Style="{StaticResource StandartHeadline}"/>
-            <TextBlock x:Name="Headline_CardNumber" Style="{StaticResource StandartCardNumber}" Margin="0 10 0 0"/>
+            <TextBlock x:Name="Headline_CardNumber" Style="{StaticResource StandartCardNumber}" Margin="0 10 0 0" Text="{Binding CardService.Card.CardNumber, StringFormat='Card: {0}'}"/>
         </StackPanel>
 
-        <TextBox x:Name="txtBoxAmount" Grid.Row="1" Tag="Amount" Style="{StaticResource StandartTextBox}"/>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="txtBoxAmount" Tag="Amount" Style="{StaticResource StandartTextBox}" Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="20,0,0,0" Height="auto" x:Name="txtBlockError" Width="200" Foreground="Red" Text="{Binding ErrorMessage, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -27,7 +31,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Content="Cancel" Style="{StaticResource StandartButton}" Command="{Binding NavigateCancelCommand}"/>
-            <Button Grid.Column="1" Content="Withdraw" Style="{StaticResource StandartButton}"/>
+            <Button Grid.Column="1" Content="Withdraw" Style="{StaticResource StandartButton}" Command="{Binding WithdrawCommand}"/>
         </Grid>
     </Grid>
 </UserControl>

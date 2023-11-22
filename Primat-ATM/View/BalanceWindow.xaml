@@ -13,7 +13,8 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Balance: 100UAH" Style="{StaticResource StandartHeadline}" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="0" x:Name="Headline_CardNumber" Style="{StaticResource StandartCardNumber}" Text="{Binding CardService.Card.CardNumber, StringFormat='Card: {0}'}"/>
+        <TextBlock Grid.Column="1" Grid.RowSpan="2" TextWrapping="Wrap" Style="{StaticResource StandartHeadline}" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged, StringFormat='Balance: {0} UAH'}"/>
 
         <Button Grid.Row="2" Content="Go Back" Style="{StaticResource StandartButton}"  VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="40,0,0,0" Command="{Binding NavigateCancelCommand}"/>
     </Grid>

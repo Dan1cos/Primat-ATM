@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Text.RegularExpressions;
@@ -15,8 +16,7 @@ namespace Primat_ATM.ViewModel
     public class ChangeEmailViewModel:ViewModelBase
     {
         private string _email;
-        private const string _match = @"([a-zA-Z0-9.]+)\@[a-zA-Z0-9.]+\.[a-zA-Z]{2,}$";
-        private static string _confirmMessage = "Are you sure you want to change the password?";
+        private const string _match = @"[-A-Za-z0-9!#$*+=/?^_{|}~]+(?:\.[-A-Za-z0-9!#$*+/=?^_{|}~]+)*\@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?";
         private string _errorMessage;
         private INavigationService _navigationService;
         private ICardRepository CardRepository;
@@ -35,6 +35,7 @@ namespace Primat_ATM.ViewModel
             NavigateCancelCommand = new RelayCommand(o => { NavigationService.NavigateTo<SettingsViewModel>(); }, o => true);
             ChangeEmailCommand = new RelayCommand(ExecuteChangeEmailCommand, CanExecuteChangeEmailCommand);
         }
+
         public string Email
         {
             get => _email;
@@ -49,6 +50,7 @@ namespace Primat_ATM.ViewModel
                 OnPropertyChanged("ErrorMessage");
             }
         }
+
         public INavigationService NavigationService
         {
             get => _navigationService;
@@ -59,11 +61,9 @@ namespace Primat_ATM.ViewModel
             }
         }
 
-        public Regex Regex { get => regex;  }
-
         private void ExecuteChangeEmailCommand(object obj)
         {
-            _confirmEmail.ConfirmationDilog(_confirmMessage);
+            _confirmEmail.ConfirmationDilog("Are you sure you want to change the email?");
             if (_confirmEmail.ShowCustomDilog())
             {
                 if (CanExecuteChangeEmailCommand(obj))
@@ -71,6 +71,10 @@ namespace Primat_ATM.ViewModel
                     ErrorMessage = "";
                     CardService.Card.Email = _email;
                     CardRepository.Edit(CardService.Card);
+                    if (CardService.Card.SendNotification)
+                    {
+                        EmailSender.SendEmail(CardService.Card.Email, "Email change", "<div>Email in Primat ATM was changed to this email</div>");
+                    }
                     NavigationService.NavigateTo<SettingsViewModel>();
                 }
                 else
@@ -82,7 +86,7 @@ namespace Primat_ATM.ViewModel
         }
         private bool CanExecuteChangeEmailCommand(object obj)
         {
-            return !string.IsNullOrWhiteSpace(Email) && Email.Length <= 45 && Regex.Match(Email).Success;
+            return !string.IsNullOrWhiteSpace(Email) && Email.Length <= 45 && regex.Match(Email, _match).Success;
         }
     }
 }

@@ -23,7 +23,11 @@
 
         <TextBlock x:Name="HeadLine_Name" Grid.Row="0" Grid.ColumnSpan="2" Text="Card operations" Style="{StaticResource StandartHeadline}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <TextBlock x:Name="HeadLine_CardNumber" Grid.Row="1" Grid.ColumnSpan="2" Text="Card: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel x:Name="HeadLine_CardNumber" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock  Text="{Binding CardService.Card.CardNumber, StringFormat='Card: {0}'}"/>
+            <TextBlock  Text="{Binding CardService.Card.Email, StringFormat='Email: {0}'}"/>
+        </StackPanel>
+        
 
         <Button Grid.Row="2" Grid.Column="0" Content="Change PIN" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Command="{Binding NavigateChangePasswordWindowCommand}"/>
 
@@ -36,7 +40,7 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
 
-                <CheckBox x:Name="IsSendEmail" Grid.Row="4" Grid.Column="0" Style="{DynamicResource ToggleButtonStyle}" Margin="0,0,10,0"/>
+                <CheckBox x:Name="IsSendEmail" Grid.Row="4" Grid.Column="0" Style="{DynamicResource ToggleButtonStyle}" Margin="0,0,10,0" IsChecked="{Binding SendEmail, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Grid.Row="4" Grid.Column="1" Text="Send a message to the Email" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
         </StackPanel>

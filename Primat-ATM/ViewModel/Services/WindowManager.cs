@@ -10,6 +10,8 @@ namespace Primat_ATM.ViewModel.Services
     public interface IWindowManager
     {
         void ShowWindow(ViewModelBase viewModel);
+        void ShowDialog(ViewModelBase viewModel);
+
         void CloseWindow();
     }
 
@@ -33,9 +35,21 @@ namespace Primat_ATM.ViewModel.Services
             }
         }
 
+        public void ShowDialog(ViewModelBase viewModel)
+        {
+            var windowType = _windowMapper.GetWindowTypeForViewModel(viewModel.GetType());
+            if (windowType != null)
+            {
+                var window = Activator.CreateInstance(windowType) as Window;
+                window.DataContext = viewModel;
+                window.ShowDialog();
+                window.Closed += (sender, args) => CloseWindow();
+            }
+        }
+
         public void CloseWindow()
         {
-            MessageBox.Show("Window closed");
+            
         }
 
         

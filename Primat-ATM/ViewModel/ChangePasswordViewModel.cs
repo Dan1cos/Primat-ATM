@@ -16,17 +16,17 @@ namespace Primat_ATM.ViewModel
         Card _card;
         private string _repeatNewPin;
         private string _errorMessage;
-        private static string _confirmMessage = "Are you sure you want to change the password?";
         private INavigationService _navigationService;
         private ICardRepository CardRepository;
-        public ICardService CardService { get; }
+        public ICardService CardService { get; set; }
         public RelayCommand NavigateCancelCommand { get; set; }
-        public RelayCommand ChangePasswordCommand { get; set; }
+        public ICommand ChangePasswordCommand { get; }
         private ConfirmationDialog _confirmPin;
         public ChangePasswordViewModel(INavigationService navigationService, ICardService cardService)
         {
             CardRepository = new CardRepository();
             NavigationService = navigationService;
+
             CardService = cardService;
             _card = new Card();
             _confirmPin = new ConfirmationDialog();
@@ -72,6 +72,10 @@ namespace Primat_ATM.ViewModel
                     ErrorMessage = "";
                     CardService.Card.Pin = _card.Pin;
                     CardRepository.Edit(CardService.Card);
+                    if (CardService.Card.SendNotification)
+                    {
+                        EmailSender.SendEmail(CardService.Card.Email, "PIN change", "<div>PIN in Primat ATM was changed</div>");
+                    }
                     NavigationService.NavigateTo<SettingsViewModel>();
                 }
                 else

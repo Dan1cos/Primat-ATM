@@ -45,7 +45,7 @@
         <Button Grid.Row="4" Grid.Column="0" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Command="{Binding NavigateTransferWindowCommand}">Transfer money</Button>
 
         <Button Grid.Row="5" Grid.Column="0" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Command="{Binding NavigateSettingsWindowCommand}">Card operations</Button>
-        <Button Grid.Row="5" Grid.Column="1" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center">End session</Button>
+        <!--<Button Grid.Row="5" Grid.Column="1" Style="{StaticResource StandartButton}" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center">End session</Button>-->
 
     </Grid>
     

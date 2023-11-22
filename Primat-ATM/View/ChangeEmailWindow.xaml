@@ -31,7 +31,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Content="Cancel" Style="{StaticResource StandartButton}" Command="{Binding NavigateCancelCommand}"/>
-            <Button Grid.Column="1" Content="Change" Style="{StaticResource StandartButton }" Command="{Binding ChangeEmailCommand}"/>
+            <Button Grid.Column="1" Content="Change" Style="{StaticResource StandartButton}" Command="{Binding ChangeEmailCommand}"/>
         </Grid>
     </Grid>
 </UserControl>
