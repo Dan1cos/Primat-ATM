@@ -16,7 +16,7 @@ namespace Primat_ATM.ViewModel
     public class ChangeEmailViewModel:ViewModelBase
     {
         private string _email;
-        private const string _match = @"[-A-Za-z0-9!#$*+=/?^_{|}~]+(?:\.[-A-Za-z0-9!#$*+/=?^_{|}~]+)*\@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?";
+        private const string _match = @"[-A-Za-z0-9!#$*+=?^_{|}~]+(?:\.[-A-Za-z0-9!#$*+=?^_{|}~]+)*\@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?";
         private string _errorMessage;
         private INavigationService _navigationService;
         private ICardRepository CardRepository;
