@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Primat_ATM.ViewModel.MainViewModel">
+    <Position X="21.25" Y="9.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAYAAAgAAAoAAACAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>ViewModel\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.ViewModelBase" Collapsed="true">
+    <Position X="23" Y="8" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.BalanceViewModel">
+    <Position X="21.75" Y="4.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAoAAACACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\BalanceViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.ChangeEmailViewModel">
+    <Position X="45.5" Y="9.25" Width="4" />
+    <AssociationLine Name="regex" Type="System.Text.RegularExpressions.Regex" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="48" Y="9.25" />
+        <Point X="48" Y="8.875" />
+        <Point X="51.25" Y="8.875" />
+        <Point X="51.25" Y="10.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="2.566" Y="1.397" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACgAARCAoEQACAAEAAAAAAAAACAAAAAAACE=</HashCode>
+      <FileName>ViewModel\ChangeEmailViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="regex" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.ChangePasswordViewModel">
+    <Position X="41.25" Y="9.25" Width="4" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" ManuallyRouted="true">
+      <Path>
+        <Point X="23.625" Y="8.691" />
+        <Point X="23.625" Y="8.877" />
+        <Point X="43.25" Y="8.877" />
+        <Point X="43.25" Y="9.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>BQAAAAAAAAEAAACAoAQACAREAAAAAAAACCAAAAQAAAA=</HashCode>
+      <FileName>ViewModel\ChangePasswordViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.DepositViewModel">
+    <Position X="34.75" Y="2.75" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAACCAoAAACAiAAAgAIEAAAABAAAAAAAA=</HashCode>
+      <FileName>ViewModel\DepositViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.LoginViewModel">
+    <Position X="26" Y="2.75" Width="3.5" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" ManuallyRouted="true">
+      <Path>
+        <Point X="23.625" Y="8" />
+        <Point X="23.625" Y="7.509" />
+        <Point X="27.75" Y="7.509" />
+        <Point X="27.75" Y="7.194" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IQAAAAEAZAAAAAAA4AACCAAAAAAAIAAAAAAAAACAAQA=</HashCode>
+      <FileName>ViewModel\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.OtherWithdrawViewModel">
+    <Position X="30" Y="9.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAEgAEACAACAoAAACAiAAAAAIAAAAABABAAAAAA=</HashCode>
+      <FileName>ViewModel\OtherWithdrawViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.SettingsViewModel">
+    <Position X="34.5" Y="9.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAoAAQCBAQAgAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\SettingsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.StatementViewModel">
+    <Position X="38" Y="9.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAgAAAAAACIoAAACAAAAAAAIAAAAAAEAAEgAAA=</HashCode>
+      <FileName>ViewModel\StatementViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.TransactionsViewModel">
+    <Position X="25" Y="9.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAYAAAgAgAoAAACAAAgAAACBAAIAAAAAAQAQA=</HashCode>
+      <FileName>ViewModel\TransactionsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.TransferViewModel">
+    <Position X="40.25" Y="2.25" Width="3.75" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" ManuallyRouted="true">
+      <Path>
+        <Point X="23.625" Y="8" />
+        <Point X="23.625" Y="7.428" />
+        <Point X="37.292" Y="7.428" Type="JumpStart" />
+        <Point X="37.458" Y="7.428" Type="JumpEnd" />
+        <Point X="42.125" Y="7.428" />
+        <Point X="42.125" Y="7.078" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IQAAAAEgAAAAAACAoAAACEmAACAAoAAAAAAAAAABAAA=</HashCode>
+      <FileName>ViewModel\TransferViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.WithdrawalViewModel">
+    <Position X="44.25" Y="4.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAIAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\WithdrawalViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.WithdrawViewModel">
+    <Position X="29.75" Y="2.75" Width="4.75" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="23.625" Y="8" />
+        <Point X="23.625" Y="7.515" />
+        <Point X="25.75" Y="7.515" />
+        <Point X="25.75" Y="7.444" />
+        <Point X="32.125" Y="7.444" />
+        <Point X="32.125" Y="6.425" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAEACAACAoAAACAgAAAAAIAACAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\WithdrawViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Text.RegularExpressions.Regex">
+    <Position X="50" Y="10.25" Width="1.5" />
+    <Members>
+      <Method Name="CompileToAssembly" Hidden="true" />
+      <Method Name="Escape" Hidden="true" />
+      <Method Name="GetGroupNames" Hidden="true" />
+      <Method Name="GetGroupNumbers" Hidden="true" />
+      <Method Name="GroupNameFromNumber" Hidden="true" />
+      <Method Name="GroupNumberFromName" Hidden="true" />
+      <Method Name="InitializeReferences" Hidden="true" />
+      <Method Name="IsMatch" Hidden="true" />
+      <Method Name="Match" Hidden="true" />
+      <Method Name="Replace" Hidden="true" />
+      <Method Name="Split" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="Unescape" Hidden="true" />
+      <Method Name="UseOptionC" Hidden="true" />
+      <Method Name="UseOptionR" Hidden="true" />
+      <Method Name="ValidateMatchTimeout" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

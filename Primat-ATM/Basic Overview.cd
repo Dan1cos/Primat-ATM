@@ -39,7 +39,7 @@
     <Lollipop Orientation="Right" Position="0.1" Collapsed="true" />
   </Class>
   <Class Name="Primat_ATM.Repository.DotEnv">
-    <Position X="23.25" Y="7.75" Width="2.25" />
+    <Position X="0.5" Y="9.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Repository\DotEnv.cs</FileName>
@@ -151,10 +151,20 @@
   </Class>
   <Class Name="Primat_ATM.ViewModel.Services.NavigationService">
     <Position X="23.75" Y="0.5" Width="3.75" />
+    <AssociationLine Name="_currentView" Type="Primat_ATM.ViewModel.ViewModelBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26.531" Y="2.828" />
+        <Point X="26.531" Y="5.5" />
+        <Point X="21" Y="5.5" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>EAAAAAACAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\Services\NavigationService.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_currentView" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Primat_ATM.ViewModel.Services.ViewModelLocator">
@@ -283,8 +293,8 @@
     <Position X="23.75" Y="5.75" Width="2" />
     <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="21" Y="5.562" />
-        <Point X="23.25" Y="5.562" />
+        <Point X="21" Y="5.625" />
+        <Point X="23.25" Y="5.625" />
         <Point X="23.25" Y="6.125" />
         <Point X="23.75" Y="6.125" />
       </Path>
@@ -335,7 +345,9 @@
     <Position X="23.5" Y="4.75" Width="2" />
     <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="21" Y="5.312" />
+        <Point X="21" Y="5.188" />
+        <Point X="22.25" Y="5.188" />
+        <Point X="22.25" Y="5.312" />
         <Point X="23.5" Y="5.312" />
       </Path>
     </InheritanceLine>
@@ -435,7 +447,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Primat_ATM.ViewModel.Services.EmailSender">
-    <Position X="17.75" Y="9" Width="4.5" />
+    <Position X="0.5" Y="10.5" Width="4.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\Services\EmailSender.cs</FileName>
