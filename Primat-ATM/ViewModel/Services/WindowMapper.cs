@@ -1,5 +1,4 @@
 ﻿using Primat_ATM.View;
-using Primat_ATM.View.TransactionsWindows.ModalWindows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +15,9 @@ namespace Primat_ATM.ViewModel.Services
         public WindowMapper()
         {
             RegisterMapping<LoginViewModel, MainWindow>();
-            RegisterMapping<MainViewModel, TransactionsWindow>();
-            RegisterMapping<SettingsViewModel, CardOperationsWindow>();
-            RegisterMapping<DepositViewModel, MoneyDepositWindow>();
-            RegisterMapping<TransferViewModel, TransferMoneyWindow>();
-            RegisterMapping<WithdrawalViewModel, MoneyWithdrawalWindow>();
+            RegisterMapping<MainViewModel, ContainerWindow>();
+            /*RegisterMapping<SettingsViewModel, CardOperationsWindow>();
+            RegisterMapping<DepositViewModel, MoneyDepositWindow>();*/
         }
 
         public void RegisterMapping<TViewModel, TWindow>() where TViewModel: ViewModelBase where TWindow: Window

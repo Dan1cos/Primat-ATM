@@ -1,7 +1,6 @@
 ﻿using Primat_ATM.Model;
 using Primat_ATM.Repository;
 using Primat_ATM.ViewModel.Services;
-using Primat_ATM.View.ConfirmationWindows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,18 +21,31 @@ namespace Primat_ATM.ViewModel
         private string errorMessage;
         private IWindowManager _windowManager;
         private ViewModelLocator _viewModelLocator;
+        private INavigationService _navigationService;
         public ICardService CardService { get; set; }
-        public LoginViewModel(ICardService cardService, IWindowManager windowManager, ViewModelLocator viewModelLocator)
+        public LoginViewModel(INavigationService navigationService, ICardService cardService, IWindowManager windowManager, ViewModelLocator viewModelLocator)
         {
             cardRepository = new CardRepository();
             card = new Card();
             CardService = cardService;
             _windowManager = windowManager;
             _viewModelLocator = viewModelLocator;
+            NavigationService = navigationService;
+
             LoginCommand = new RelayCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
         }
 
         public ICommand LoginCommand { get; }
+
+        public INavigationService NavigationService
+        {
+            get => _navigationService;
+            set
+            {
+                _navigationService = value;
+                OnPropertyChanged();
+            }
+        }
 
         public string CardNumber
         {
@@ -67,8 +79,9 @@ namespace Primat_ATM.ViewModel
                 if (isValidCard)
                 {
                     CardService.Authenticate(cardRepository.GetByCardNumber(CardNumber));
+                    NavigationService.NavigateTo<TransactionsViewModel>();
                     ErrorMessage = "";
-                    _windowManager.ShowWindow(_viewModelLocator.MainViewModel);
+                    _windowManager.ShowDialog(_viewModelLocator.MainViewModel);
                 }
                 else
                 {
@@ -83,12 +96,7 @@ namespace Primat_ATM.ViewModel
 
         private bool CanExecuteLoginCommand(object obj)
         {
-            bool validData = false;
-            if (!string.IsNullOrWhiteSpace(CardNumber) && CardNumber.Length == 16 && CardNumber.All(char.IsDigit) && !string.IsNullOrWhiteSpace(Pin) && Pin.Length == 4 && Pin.All(char.IsDigit))
-            {
-                validData = true;
-            }
-            return validData;
+            return !string.IsNullOrWhiteSpace(CardNumber) && CardNumber.Length == 16 && CardNumber.All(char.IsDigit) && !string.IsNullOrWhiteSpace(Pin) && Pin.Length == 4 && Pin.All(char.IsDigit);
         }
     }
 }

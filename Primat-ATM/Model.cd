@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Primat_ATM.Model.Card" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>KAAAACAAACAAAAIgIAxCAAAIgAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Model\Card.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Primat_ATM.Model.Transaction" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="0.5" Width="3.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAACAIAAAICACEACAghAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Transaction.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" />
+  </Class>
+  <Class Name="Primat_ATM.Repository.DotEnv">
+    <Position X="9.75" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\DotEnv.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.Repository.CardRepository">
+    <Position X="0.5" Y="4.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAoAAAAAAAAAAAAAAAAABAAAAAAAAAACAAAAAAAQAIA=</HashCode>
+      <FileName>Repository\CardRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" />
+  </Class>
+  <Class Name="Primat_ATM.Repository.RepositoryBase">
+    <Position X="4" Y="2.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAABAAAAA=</HashCode>
+      <FileName>Repository\RepositoryBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.Repository.TransactionRepository">
+    <Position X="5" Y="5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAIABAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Repository\TransactionRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="2.541" />
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.Services.EmailSender">
+    <Position X="9.75" Y="4.75" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\Services\EmailSender.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Primat_ATM.Model.ICardRepository">
+    <Position X="0.5" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAoAAAAAAAAAAAAAAAAABAAAAAAAAAACAAAAAAAQAIA=</HashCode>
+      <FileName>Model\ICardRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Primat_ATM.Model.ITransactionRepository">
+    <Position X="4.25" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAIAAAAAAAABAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Model\ITransactionRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

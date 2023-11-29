@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Primat_ATM.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.App">
+    <Position X="0.5" Y="2" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_serviceProvider" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Primat_ATM.Model.Card" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="2.25" Width="1.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>KAAAACAAACAAAAIgIAxCAAAIgAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Model\Card.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.Model.Transaction" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAACAIAAAICACEACAghAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Transaction.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.1" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.Repository.DotEnv">
+    <Position X="0.5" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\DotEnv.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.View.BalanceWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\BalanceWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.275" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.View.CardOperationsWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\CardOperationsWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.1" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.View.ChangeEmailWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ChangeEmailWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.1" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.View.ChangePasswordWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ChangePasswordWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.1" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.View.ConfirmationDialog" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAQAQAAQAQAAEAQAAAAAAAAAAAIBAAEAAAAAAAA=</HashCode>
+      <FileName>View\ConfirmationDialog.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.View.ContainerWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ContainerWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.737" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.View.MoneyDepositWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\MoneyDepositWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.View.MoneyWithdrawalWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\MoneyWithdrawalWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.View.OtherWithdrawalWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\OtherWithdrawalWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.View.StatementWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\StatementWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.View.TransactionsWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\TransactionsWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.55" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.View.TransferMoneyWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\TransferMoneyWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.275" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.Services.CardService" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="3" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\Services\CardService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.Services.NavigationService">
+    <Position X="23.75" Y="0.5" Width="3.75" />
+    <AssociationLine Name="_currentView" Type="Primat_ATM.ViewModel.ViewModelBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26.531" Y="2.828" />
+        <Point X="26.531" Y="5.5" />
+        <Point X="21" Y="5.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAAAAAACAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\Services\NavigationService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_currentView" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.Services.ViewModelLocator">
+    <Position X="15.25" Y="7" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAKAAAAIAAAAgAAAAABACAAAAAADAIAQAABAAAADAA=</HashCode>
+      <FileName>ViewModel\Services\ViewModelLocator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_provider" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.Services.WindowManager" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="7" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAQAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>ViewModel\Services\WindowManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.Services.WindowMapper">
+    <Position X="9.25" Y="9" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAABAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>ViewModel\Services\WindowMapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.BalanceViewModel" Collapsed="true">
+    <Position X="21.5" Y="4" Width="1.75" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="5.062" />
+        <Point X="21.25" Y="5.062" />
+        <Point X="21.25" Y="4.313" />
+        <Point X="21.5" Y="4.313" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAoAAACACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\BalanceViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.ChangeEmailViewModel" Collapsed="true">
+    <Position X="21" Y="6.25" Width="2" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="20.812" Y="5.691" />
+        <Point X="20.812" Y="5.958" />
+        <Point X="22" Y="5.958" />
+        <Point X="22" Y="6.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACgAARCAoEQACAAEAAAAAAAAACAAAAAAACE=</HashCode>
+      <FileName>ViewModel\ChangeEmailViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.ChangePasswordViewModel" Collapsed="true">
+    <Position X="20.5" Y="2.75" Width="2.25" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.375" Y="5" />
+        <Point X="20.375" Y="3.125" />
+        <Point X="20.5" Y="3.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>BQAAAAAAAAEAAACAoAQACAREAAAAAAAACCAAAAQAAAA=</HashCode>
+      <FileName>ViewModel\ChangePasswordViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.DepositViewModel" Collapsed="true">
+    <Position X="23.75" Y="3.5" Width="1.75" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.75" Y="5" />
+        <Point X="20.75" Y="3.813" />
+        <Point X="23.75" Y="3.813" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAACCAoAAACAiAAAgAIEAAAABAAAAAAAA=</HashCode>
+      <FileName>ViewModel\DepositViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.LoginViewModel" Collapsed="true">
+    <Position X="18" Y="6" Width="1.5" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="19.75" Y="5.688" />
+        <Point X="18.75" Y="5.688" />
+        <Point X="18.75" Y="6" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IQAAAAEAZAAAAAAA4AACCAAAAAAAIAAAAAAAAACAAQA=</HashCode>
+      <FileName>ViewModel\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.MainViewModel">
+    <Position X="15.25" Y="0.5" Width="3.5" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.75" Y="5.125" />
+        <Point X="17.365" Y="5.125" />
+        <Point X="17.365" Y="3.405" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAYAAAgAAAoAAACAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>ViewModel\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_navigationService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.ObservableObject">
+    <Position X="19.25" Y="0.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\ObservableObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.OtherWithdrawViewModel" Collapsed="true">
+    <Position X="23.75" Y="5.75" Width="2" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="5.625" />
+        <Point X="23.25" Y="5.625" />
+        <Point X="23.25" Y="6.125" />
+        <Point X="23.75" Y="6.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AQAAAAEgAEACAACAoAAACAiAAAAAIAAAAABABAAAAAA=</HashCode>
+      <FileName>ViewModel\OtherWithdrawViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.RelayCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAACAAQAAEAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>ViewModel\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.1" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.SettingsViewModel" Collapsed="true">
+    <Position X="18" Y="3.75" Width="1.75" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.938" Y="5" />
+        <Point X="19.938" Y="4.851" />
+        <Point X="18.75" Y="4.851" />
+        <Point X="18.75" Y="4.441" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAoAAQCBAQAgAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\SettingsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.StatementViewModel" Collapsed="true">
+    <Position X="23.25" Y="6.75" Width="5" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.625" Y="5.691" />
+        <Point X="20.625" Y="7.187" />
+        <Point X="23.25" Y="7.187" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAIAAAgAAAAAACIoAAACAAAAAAAIAAAAAAEAAEgAAA=</HashCode>
+      <FileName>ViewModel\StatementViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.TransactionsViewModel" Collapsed="true">
+    <Position X="23.5" Y="4.75" Width="2" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="5.188" />
+        <Point X="22.25" Y="5.188" />
+        <Point X="22.25" Y="5.312" />
+        <Point X="23.5" Y="5.312" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAYAAAgAgAoAAACAAAgAAACBAAIAAAAAAQAQA=</HashCode>
+      <FileName>ViewModel\TransactionsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.TransferViewModel" Collapsed="true">
+    <Position X="21" Y="7.5" Width="1.75" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.438" Y="5.691" />
+        <Point X="20.438" Y="7.812" />
+        <Point X="21" Y="7.812" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IQAAAAEgAAAAAACAoAAACEmAACAAoAAAAAAAAAABAAA=</HashCode>
+      <FileName>ViewModel\TransferViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.ViewModelBase" Collapsed="true">
+    <Position X="19.75" Y="5" Width="1.25" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ObservableObject" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.125" Y="2.055" />
+        <Point X="20.125" Y="3.527" />
+        <Point X="20.125" Y="3.527" />
+        <Point X="20.125" Y="5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.ViewModelCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAACAAQAAEAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>ViewModel\ViewModelCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.1" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.WithdrawalViewModel" Collapsed="true">
+    <Position X="19" Y="8" Width="2" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" FixedFromPoint="true">
+      <Path>
+        <Point X="20.25" Y="5.691" />
+        <Point X="20.25" Y="7.7" />
+        <Point X="20" Y="7.7" />
+        <Point X="20" Y="8" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAIAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\WithdrawalViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.WithdrawViewModel" Collapsed="true">
+    <Position X="18" Y="7.25" Width="1.75" />
+    <InheritanceLine Type="Primat_ATM.ViewModel.ViewModelBase" FixedFromPoint="true">
+      <Path>
+        <Point X="20.062" Y="5.691" />
+        <Point X="20.062" Y="6.95" />
+        <Point X="18.875" Y="6.95" />
+        <Point X="18.875" Y="7.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAEACAACAoAAACAgAAAAAIAACAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\WithdrawViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.Repository.CardRepository" Collapsed="true">
+    <Position X="7.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAAAAAAAAAAAAAAAAABAAAAAAAAAACAAAAAAAQAIA=</HashCode>
+      <FileName>Repository\CardRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.Repository.RepositoryBase" Collapsed="true">
+    <Position X="6" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAABAAAAA=</HashCode>
+      <FileName>Repository\RepositoryBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Primat_ATM.Repository.TransactionRepository" Collapsed="true">
+    <Position X="4.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAIABAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Repository\TransactionRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Primat_ATM.ViewModel.Services.EmailSender">
+    <Position X="0.5" Y="10.5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\Services\EmailSender.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Primat_ATM.ViewModel.Services.INavigationService">
+    <Position X="15.75" Y="5.5" Width="1.75" />
+    <AssociationLine Name="CurrentView" Type="Primat_ATM.ViewModel.ViewModelBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.5" Y="6.052" />
+        <Point X="17.74" Y="6.052" />
+        <Point X="17.74" Y="5.438" />
+        <Point X="19.75" Y="5.438" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\Services\NavigationService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CurrentView" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="System.IServiceProvider">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Windows.Input.ICommand">
+    <Position X="9.25" Y="5" Width="2.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Windows.Markup.IComponentConnector">
+    <Position X="5.5" Y="1.25" Width="3" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Primat_ATM.ViewModel.Services.ICardService">
+    <Position X="9.25" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\Services\CardService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="System.ComponentModel.INotifyPropertyChanged" Collapsed="true">
+    <Position X="12" Y="1.25" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Primat_ATM.Model.ICardRepository" Collapsed="true">
+    <Position X="0.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAAAAAAAAAAAAAAAAABAAAAAAAAAACAAAAAAAQAIA=</HashCode>
+      <FileName>Model\ICardRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Primat_ATM.Model.ITransactionRepository" Collapsed="true">
+    <Position X="2.25" Y="8.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAIAAAAAAAABAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Model\ITransactionRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

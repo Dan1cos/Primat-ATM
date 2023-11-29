@@ -1,0 +1,36 @@
+﻿<Window x:Class="Primat_ATM.View.ConfirmationDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Primat_ATM.View"
+        mc:Ignorable="d"
+        Title="ConfirmationDialog" Height="150" Width="300"
+        ResizeMode="NoResize"
+        Style="{StaticResource StandartWindow}" Background="{DynamicResource ConfirmationBlue}">
+    <Window.Resources>
+        <!-- Background -->
+        <SolidColorBrush x:Key="ConfirmationBlue" Color="#D0E4F1"/>
+        <SolidColorBrush x:Key="WarningYellow" Color="#FFF3CD"/>
+        <SolidColorBrush x:Key="ErrorRed" Color="#F8D7DA"/>
+        <SolidColorBrush x:Key="SuccessfulGrean" Color="#D4EDDA"/>
+        
+        <!-- Button -->
+        <SolidColorBrush x:Key="ButtonBlue" Color="#4B527E"/>
+        <SolidColorBrush x:Key="ButtonYesSaveGreen" Color="#4CAF50"/>
+        <SolidColorBrush x:Key="ButtonDeleteRed" Color="#F44336"/>
+        <SolidColorBrush x:Key="ButtonCancelGray" Color="#9E9E9E"/>
+        <SolidColorBrush x:Key="ButtonCancelBlue" Color="#2196F3"/>
+        <SolidColorBrush x:Key="ButtonAdditionalActions" Color="#2196F3"/>
+    </Window.Resources>
+
+    <Grid Style="{StaticResource StandartGrid}">
+
+        <TextBlock x:Name="SomeTxt" Text="text" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Button x:Name="Cancelbtn" Content="Cancel" Margin="5" Width="75" Height="20" Click="Cancel" Style="{StaticResource StandartButton}" Background="{StaticResource ButtonCancelGray}"/>
+            <Button x:Name="Confirmbtn" Content="Confirm" Margin="5" Width="75" Height="20" Click="Confirm" Style="{StaticResource StandartButton}" Background="{StaticResource ButtonYesSaveGreen}"/>
+        </StackPanel>
+    </Grid>
+</Window>

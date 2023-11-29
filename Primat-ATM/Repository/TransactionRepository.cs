@@ -18,7 +18,7 @@ namespace Primat_ATM.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "insert into transaction(timestamp, fromId, toId, amount) values (@timestamp, @fromId, @toId, @amount)";
+                command.CommandText = "insert into Transaction(timestamp, fromId, toId, amount) values (@timestamp, @fromId, @toId, @amount)";
                 command.Parameters.Add("@timestamp", MySqlDbType.Timestamp).Value = transaction.Timestamp;
                 command.Parameters.Add("@fromId", MySqlDbType.Int32).Value = transaction.FromId;
                 command.Parameters.Add("@toId", MySqlDbType.Int32).Value = transaction.ToId;
@@ -35,7 +35,7 @@ namespace Primat_ATM.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "select * from transaction where transactionId=@transactionId";
+                command.CommandText = "select * from Transaction where transactionId=@transactionId";
                 command.Parameters.Add("@transactionId", MySqlDbType.Int32).Value = transactionId;
                 using (var reader = command.ExecuteReader())
                 {
@@ -71,7 +71,7 @@ namespace Primat_ATM.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "select * from transaction where fromId=@fromId";
+                command.CommandText = "select * from Transaction where fromId=@fromId";
                 command.Parameters.Add("@fromId", MySqlDbType.Int32).Value = fromId;
                 using (var reader = command.ExecuteReader())
                 {
@@ -109,7 +109,7 @@ namespace Primat_ATM.Repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "select * from transaction where toId=@toId";
+                command.CommandText = "select * from Transaction where toId=@toId";
                 command.Parameters.Add("@toId", MySqlDbType.Int32).Value = toId;
                 using (var reader = command.ExecuteReader())
                 {

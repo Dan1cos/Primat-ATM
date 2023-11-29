@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="Primat_ATM.View.OtherWithdrawalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Primat_ATM.View"
+        mc:Ignorable="d">
+    <Grid Style="{StaticResource StandartGrid}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Withdraw money" Style="{StaticResource StandartHeadline}"/>
+            <TextBlock x:Name="Headline_CardNumber" Style="{StaticResource StandartCardNumber}" Margin="0 10 0 0" Text="{Binding CardService.Card.CardNumber, StringFormat='Card: {0}'}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="txtBoxAmount" Tag="Amount" Style="{StaticResource StandartTextBox}" Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="20,0,0,0" Height="auto" x:Name="txtBlockError" Width="200" Foreground="Red" Text="{Binding ErrorMessage, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Cancel" Style="{StaticResource StandartButton}" Command="{Binding NavigateCancelCommand}"/>
+            <Button Grid.Column="1" Content="Withdraw" Style="{StaticResource StandartButton}" Command="{Binding WithdrawCommand}"/>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -15,11 +15,8 @@ namespace Primat_ATM.ViewModel
         private readonly IWindowManager _windowManager;
         private readonly ViewModelLocator _viewModelLocator;
         public ICardService CardService { get; set; }
-        public RelayCommand OpenSettingsWindowCommand { get; set; }
-        public RelayCommand NavigateDepositCommand { get; set; }
-        public RelayCommand NavigateTransferCommand { get; set; }
-        public RelayCommand NavigateWithdrawalCommand { get; set; }
-        public RelayCommand RelayNavigateCancelCommand { get; set; }
+        public RelayCommand EndSession { get; set; }
+
 
         public MainViewModel(INavigationService navigationService ,ICardService cardService, IWindowManager windowManager, ViewModelLocator viewModelLocator)
         {
@@ -29,22 +26,8 @@ namespace Primat_ATM.ViewModel
             _viewModelLocator = viewModelLocator;
             card = cardService.Card;
 
-            OpenSettingsWindowCommand = new RelayCommand(o => { _windowManager.ShowWindow(_viewModelLocator.SettingsViewModel); }, o => true);
-            //NavigateDepositCommand = new RelayCommand(o => { NavigationService.NavigateTo<DepositViewModel>(); }, o => true);
-            NavigateDepositCommand = new RelayCommand(o => { _windowManager.ShowWindow(_viewModelLocator.DepositViewModel); }, o => true);
+            EndSession = new RelayCommand(o => { NavigationService.NavigateTo<TransactionsViewModel>(); }, o => true);
 
-            //NavigateTransferCommand = new RelayCommand(o => { NavigationService.NavigateTo<TransferViewModel>(); }, o => true);
-            NavigateTransferCommand = new RelayCommand(o => { _windowManager.ShowWindow(_viewModelLocator.TransferViewModel); }, o => true);
-
-            //NavigateWithdrawalCommand = new RelayCommand(o => { NavigationService.NavigateTo<WithdrawalViewModel>(); }, o => true);
-            NavigateWithdrawalCommand = new RelayCommand(o => { _windowManager.ShowWindow(_viewModelLocator.WithdrawalViewModel); }, o => true);
-
-        }
-
-        public string CardNumber
-        {
-            get => card.CardNumber;
-            set => card.CardNumber = value;
         }
 
         public INavigationService NavigationService
