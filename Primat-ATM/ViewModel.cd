@@ -26,24 +26,10 @@
   </Class>
   <Class Name="Primat_ATM.ViewModel.Services.NavigationService">
     <Position X="16.75" Y="5.5" Width="3.75" />
-    <AssociationLine Name="_currentView" Type="Primat_ATM.ViewModel.ViewModelBase" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="16.75" Y="6.563" />
-        <Point X="16.627" Y="6.563" />
-        <Point X="16.627" Y="5.5" />
-        <Point X="11.75" Y="5.5" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.11" Y="-0.157" />
-      </MemberNameLabel>
-    </AssociationLine>
     <TypeIdentifier>
       <HashCode>EAAAAAACAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\Services\NavigationService.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="_currentView" />
-    </ShowAsAssociation>
     <Lollipop Orientation="Bottom" Position="3.55" />
   </Class>
   <Class Name="Primat_ATM.ViewModel.Services.ViewModelLocator">

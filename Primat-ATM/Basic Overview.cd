@@ -151,20 +151,10 @@
   </Class>
   <Class Name="Primat_ATM.ViewModel.Services.NavigationService">
     <Position X="23.75" Y="0.5" Width="3.75" />
-    <AssociationLine Name="_currentView" Type="Primat_ATM.ViewModel.ViewModelBase" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="26.531" Y="2.828" />
-        <Point X="26.531" Y="5.5" />
-        <Point X="21" Y="5.5" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
       <HashCode>EAAAAAACAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\Services\NavigationService.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="_currentView" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Primat_ATM.ViewModel.Services.ViewModelLocator">
