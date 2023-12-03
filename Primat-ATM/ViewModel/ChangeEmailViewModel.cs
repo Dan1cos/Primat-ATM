@@ -86,7 +86,7 @@ namespace Primat_ATM.ViewModel
         }
         private bool CanExecuteChangeEmailCommand(object obj)
         {
-            return !string.IsNullOrWhiteSpace(Email) && Email.Length <= 45 && regex.Match(Email, _match).Success;
+            return !string.IsNullOrWhiteSpace(Email) && Email.Length <= 45 && regex.Match(Email).Success;
         }
     }
 }
