@@ -81,7 +81,7 @@ namespace Primat_ATM.ViewModel
                     ErrorMessage = "Incorrect email";
                 }
             }
-
+            _confirmEmail = new ConfirmationDialog();
         }
         private bool CanExecuteChangeEmailCommand(object obj)
         {

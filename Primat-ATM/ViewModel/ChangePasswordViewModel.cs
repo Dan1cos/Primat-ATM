@@ -84,7 +84,7 @@ namespace Primat_ATM.ViewModel
                     ErrorMessage = "Password is either empty or is not 4 digits";
                 }
             }
-
+            _confirmPin = new ConfirmationDialog();
         }
         private bool CanExecuteChangePasswordCommand(object obj)
         {
